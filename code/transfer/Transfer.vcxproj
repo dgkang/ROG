@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>transfer</ProjectName>
+    <ProjectGuid>{AFAC911B-AB7F-4C1A-97A3-B02C5DD8FC9C}</ProjectGuid>
+    <RootNamespace>transfer</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\lib\$(Configuration)\</OutDir>
+    <IntDir>..\tmp\$(Configuration)\$(ProjectName)\</IntDir>
+    <PreBuildEventUseInBuild>true</PreBuildEventUseInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\lib\$(Configuration)\</OutDir>
+    <IntDir>..\tmp\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../sdu;../sdnet;../net_manager;../jsoncpp;../zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;USE_SDNET;_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>transfer_pch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ShowIncludes>false</ShowIncludes>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>../sdu;../sdnet;../net_manager;../jsoncpp;../zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;USE_SDNET;_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>transfer_pch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="af_encrypt.cpp" />
+    <ClCompile Include="af_transfer_client.cpp" />
+    <ClCompile Include="af_transfer_server.cpp" />
+    <ClCompile Include="boost_ioservice_pool.cpp" />
+    <ClCompile Include="boost_session.cpp" />
+    <ClCompile Include="boost_session_manager.cpp" />
+    <ClCompile Include="boost_transfer_client.cpp" />
+    <ClCompile Include="boost_transfer_server.cpp" />
+    <ClCompile Include="encrypt.cpp" />
+    <ClCompile Include="fake_network_pipe.cpp" />
+    <ClCompile Include="fake_transfer_client.cpp" />
+    <ClCompile Include="fake_transfer_server.cpp" />
+    <ClCompile Include="message_encoder.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="netdata.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="packet_parser.cpp" />
+    <ClCompile Include="real_transfer_client.cpp" />
+    <ClCompile Include="real_transfer_server.cpp" />
+    <ClCompile Include="session.cpp" />
+    <ClCompile Include="session_manager.cpp" />
+    <ClCompile Include="shared_resouces.cpp" />
+    <ClCompile Include="transfer.cpp" />
+    <ClCompile Include="transfer_pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">transfer_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="transfer_socket.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="af_encrypt.h" />
+    <ClInclude Include="af_transfer_client.h" />
+    <ClInclude Include="af_transfer_server.h" />
+    <ClInclude Include="boost_ioservice_pool.h" />
+    <ClInclude Include="boost_session.h" />
+    <ClInclude Include="boost_session_manager.h" />
+    <ClInclude Include="boost_Socket.h" />
+    <ClInclude Include="boost_transfer_client.h" />
+    <ClInclude Include="boost_transfer_server.h" />
+    <ClInclude Include="encrypt.h" />
+    <ClInclude Include="fake_network_pipe.h" />
+    <ClInclude Include="fake_transfer_client.h" />
+    <ClInclude Include="fake_transfer_server.h" />
+    <ClInclude Include="message_encoder.h" />
+    <ClInclude Include="netdata.h" />
+    <ClInclude Include="packet_parser.h" />
+    <ClInclude Include="protocol_define.h" />
+    <ClInclude Include="real_transfer_client.h" />
+    <ClInclude Include="real_transfer_server.h" />
+    <ClInclude Include="session.h" />
+    <ClInclude Include="session_manager.h" />
+    <ClInclude Include="shared_resouces.h" />
+    <ClInclude Include="transfer.h" />
+    <ClInclude Include="transfer_pch.h" />
+    <ClInclude Include="transfer_socket.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\net_manager\net_manager.vcxproj">
+      <Project>{629a07cf-ef39-40e8-a17b-ff71d607b229}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\sdu\sdu.vcxproj">
+      <Project>{641c5d2a-7104-4a7e-9bc2-7133cf4de11b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\tinyxml\tinyxml.vcxproj">
+      <Project>{c3a3f18c-0254-4ff7-8890-3c2422da7957}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\zlib\zlib.vcxproj">
+      <Project>{dcda2a14-efc8-4cdd-afa2-c5081af4551a}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

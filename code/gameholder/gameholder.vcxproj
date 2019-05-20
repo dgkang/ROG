@@ -1,0 +1,1869 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6DC6401D-5242-4934-9F9C-1B85F6C3400E}</ProjectGuid>
+    <RootNamespace>gameholder</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\lib\$(Configuration)\</OutDir>
+    <IntDir>..\tmp\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/D _CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../sdu;../net_manager;../transfer;../collision;../grid_world;../tinyxml;../pcre;../jsoncpp;../commonlib;../formula_cal;../navmesh;../box2d;./script/lua;./script/tolua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_USE_MATH_DEFINES;PCRE_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>gameholder_pch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <AdditionalLibraryDirectories>..\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="action_controller.cpp" />
+    <ClCompile Include="action_creature_controller.cpp" />
+    <ClCompile Include="action_factory.cpp" />
+    <ClCompile Include="action_player_controller.cpp" />
+    <ClCompile Include="activity_manager.cpp" />
+    <ClCompile Include="adventure_config.cpp" />
+    <ClCompile Include="adventure_manager.cpp" />
+    <ClCompile Include="ai_action_base.cpp" />
+    <ClCompile Include="ai_action_container.cpp" />
+    <ClCompile Include="ai_action_flee.cpp" />
+    <ClCompile Include="ai_action_moveto.cpp" />
+    <ClCompile Include="ai_action_move_random.cpp" />
+    <ClCompile Include="ai_action_pathing.cpp" />
+    <ClCompile Include="ai_action_seek_object.cpp" />
+    <ClCompile Include="ai_action_select_skill.cpp" />
+    <ClCompile Include="ai_action_skill_to.cpp" />
+    <ClCompile Include="ai_action_stop.cpp" />
+    <ClCompile Include="ai_action_teleport.cpp" />
+    <ClCompile Include="ai_condition_base.cpp" />
+    <ClCompile Include="ai_condition_call_pet_count.cpp" />
+    <ClCompile Include="ai_condition_cd.cpp" />
+    <ClCompile Include="ai_condition_enemy_exist.cpp" />
+    <ClCompile Include="ai_condition_enemy_in_range.cpp" />
+    <ClCompile Include="ai_condition_find_enemy.cpp" />
+    <ClCompile Include="ai_condition_finish_path.cpp" />
+    <ClCompile Include="ai_condition_in_skill_range.cpp" />
+    <ClCompile Include="ai_condition_lack_hp.cpp" />
+    <ClCompile Include="ai_condition_lack_mp.cpp" />
+    <ClCompile Include="ai_condition_lost_target.cpp" />
+    <ClCompile Include="ai_condition_master_attack.cpp" />
+    <ClCompile Include="ai_condition_master_in_range.cpp" />
+    <ClCompile Include="ai_condition_master_onhit.cpp" />
+    <ClCompile Include="ai_condition_onhit.cpp" />
+    <ClCompile Include="ai_condition_onstate.cpp" />
+    <ClCompile Include="ai_condition_pet_life.cpp" />
+    <ClCompile Include="ai_condition_satisfy.cpp" />
+    <ClCompile Include="ai_condition_timer.cpp" />
+    <ClCompile Include="ai_container.cpp" />
+    <ClCompile Include="ai_controller.cpp" />
+    <ClCompile Include="ai_factory.cpp" />
+    <ClCompile Include="ai_group.cpp" />
+    <ClCompile Include="ai_group_register.cpp" />
+    <ClCompile Include="ai_manager.cpp" />
+    <ClCompile Include="ai_state.cpp" />
+    <ClCompile Include="alchemy_config.cpp" />
+    <ClCompile Include="alchemy_config_manager.cpp" />
+    <ClCompile Include="alchemy_manager.cpp" />
+    <ClCompile Include="answer_manager.cpp" />
+    <ClCompile Include="answer_question_config.cpp" />
+    <ClCompile Include="answer_question_manager.cpp" />
+    <ClCompile Include="aoi_manager.cpp" />
+    <ClCompile Include="aoi_object.cpp" />
+    <ClCompile Include="aoi_system_manager.cpp" />
+    <ClCompile Include="ashura_channel_manager.cpp" />
+    <ClCompile Include="ashura_config.cpp" />
+    <ClCompile Include="ashura_manager.cpp" />
+    <ClCompile Include="ashura_recorder.cpp" />
+    <ClCompile Include="aura.cpp" />
+    <ClCompile Include="auto_fight_config.cpp" />
+    <ClCompile Include="babel_manager.cpp" />
+    <ClCompile Include="bag_grid_open_cost_config.cpp" />
+    <ClCompile Include="bag_manager.cpp" />
+    <ClCompile Include="battle_manager.cpp" />
+    <ClCompile Include="battle_offline_config.cpp" />
+    <ClCompile Include="battle_recorder.cpp" />
+    <ClCompile Include="battle_state_manager.cpp" />
+    <ClCompile Include="battle_unit.cpp" />
+    <ClCompile Include="battle_unit_communicator.cpp" />
+    <ClCompile Include="battle_unit_connecter.cpp" />
+    <ClCompile Include="bh_manager.cpp" />
+    <ClCompile Include="bind_money_point_sale_config.cpp" />
+    <ClCompile Include="boss.cpp" />
+    <ClCompile Include="bouns_config_manager.cpp" />
+    <ClCompile Include="brave_heart_config.cpp" />
+    <ClCompile Include="buff.cpp" />
+    <ClCompile Include="buff_config.cpp" />
+    <ClCompile Include="buff_controller.cpp" />
+    <ClCompile Include="buff_data.cpp" />
+    <ClCompile Include="buff_func_absorb_damage.cpp" />
+    <ClCompile Include="buff_func_base.cpp" />
+    <ClCompile Include="buff_func_bleed.cpp" />
+    <ClCompile Include="buff_func_damage.cpp" />
+    <ClCompile Include="buff_func_damage_scale.cpp" />
+    <ClCompile Include="buff_func_exp_multiple.cpp" />
+    <ClCompile Include="buff_func_factory.cpp" />
+    <ClCompile Include="buff_func_heal.cpp" />
+    <ClCompile Include="buff_func_immortal.cpp" />
+    <ClCompile Include="buff_func_magic_damage.cpp" />
+    <ClCompile Include="buff_func_prop_change.cpp" />
+    <ClCompile Include="buff_func_prop_scale.cpp" />
+    <ClCompile Include="buff_func_shock.cpp" />
+    <ClCompile Include="buff_func_silence.cpp" />
+    <ClCompile Include="buff_func_stun.cpp" />
+    <ClCompile Include="buff_manager.cpp" />
+    <ClCompile Include="buy_cheap_manager.cpp" />
+    <ClCompile Include="capture_flag_channel_manager.cpp" />
+    <ClCompile Include="capture_flag_config.cpp" />
+    <ClCompile Include="capture_flag_manager.cpp" />
+    <ClCompile Include="cell_visitor.cpp" />
+    <ClCompile Include="center_config.cpp" />
+    <ClCompile Include="center_handler.cpp" />
+    <ClCompile Include="center_handler_helper.cpp" />
+    <ClCompile Include="channel_manager.cpp" />
+    <ClCompile Include="chaos_faction_channel_manager.cpp" />
+    <ClCompile Include="chaos_faction_config.cpp" />
+    <ClCompile Include="chaos_faction_manager.cpp" />
+    <ClCompile Include="chat_manager.cpp" />
+    <ClCompile Include="checkpoint.cpp" />
+    <ClCompile Include="city_channel_manager.cpp" />
+    <ClCompile Include="city_fight_channel_manager.cpp" />
+    <ClCompile Include="city_fight_manager.cpp" />
+    <ClCompile Include="city_survival_channel_manager.cpp" />
+    <ClCompile Include="city_survival_config.cpp" />
+    <ClCompile Include="city_survival_manager.cpp" />
+    <ClCompile Include="config_manager.cpp" />
+    <ClCompile Include="consume_config.cpp" />
+    <ClCompile Include="contrast_manager.cpp" />
+    <ClCompile Include="creature.cpp" />
+    <ClCompile Include="cross_team_channel_manager.cpp" />
+    <ClCompile Include="cross_team_manager.cpp" />
+    <ClCompile Include="crusade_boss_channel_manager.cpp" />
+    <ClCompile Include="daily_dungeon_manager.cpp" />
+    <ClCompile Include="daily_fashion_manager.cpp" />
+    <ClCompile Include="dance_config.cpp" />
+    <ClCompile Include="day_investment_config.cpp" />
+    <ClCompile Include="day_investment_manager.cpp" />
+    <ClCompile Include="decompose_config.cpp" />
+    <ClCompile Include="decompose_manager.cpp" />
+    <ClCompile Include="default_channel_manager.cpp" />
+    <ClCompile Include="design_config_manager.cpp" />
+    <ClCompile Include="donate_config.cpp" />
+    <ClCompile Include="donate_manager.cpp" />
+    <ClCompile Include="drop_object.cpp" />
+    <ClCompile Include="drop_ruler.cpp" />
+    <ClCompile Include="dungeon.cpp" />
+    <ClCompile Include="dungeon_clearance_bonus_config.cpp" />
+    <ClCompile Include="dungeon_config_manager.cpp" />
+    <ClCompile Include="dungeon_data.cpp" />
+    <ClCompile Include="dungeon_drop_config.cpp" />
+    <ClCompile Include="dungeon_exp_bonus_config.cpp" />
+    <ClCompile Include="dungeon_gain_config.cpp" />
+    <ClCompile Include="dungeon_manager.cpp" />
+    <ClCompile Include="dungeon_map_manager.cpp" />
+    <ClCompile Include="dungeon_rule.cpp" />
+    <ClCompile Include="dungeon_score_config.cpp" />
+    <ClCompile Include="dungeon_set.cpp" />
+    <ClCompile Include="dungeon_times_manager.cpp" />
+    <ClCompile Include="egg_config.cpp" />
+    <ClCompile Include="egg_manager.cpp" />
+    <ClCompile Include="enemy_manager.cpp" />
+    <ClCompile Include="equip_attribute_config.cpp" />
+    <ClCompile Include="equip_config.cpp" />
+    <ClCompile Include="equip_enchantment_config.cpp" />
+    <ClCompile Include="equip_lighting.cpp" />
+    <ClCompile Include="equip_manager.cpp" />
+    <ClCompile Include="equip_quality_attribute_config.cpp" />
+    <ClCompile Include="equip_quality_up_config.cpp" />
+    <ClCompile Include="equip_star_up_config.cpp" />
+    <ClCompile Include="equip_strengthen_manager.cpp" />
+    <ClCompile Include="equip_wash_up_config.cpp" />
+    <ClCompile Include="event.cpp" />
+    <ClCompile Include="event_dispatcher.cpp" />
+    <ClCompile Include="event_receiver.cpp" />
+    <ClCompile Include="expend_manager.cpp" />
+    <ClCompile Include="experience_vip.cpp" />
+    <ClCompile Include="faction_manager.cpp" />
+    <ClCompile Include="faction_pk_channel_manager.cpp" />
+    <ClCompile Include="faction_pk_config.cpp" />
+    <ClCompile Include="fashion_config.cpp" />
+    <ClCompile Include="fashion_manager.cpp" />
+    <ClCompile Include="fcm_manager.cpp" />
+    <ClCompile Include="formula_config.cpp" />
+    <ClCompile Include="formula_manager.cpp" />
+    <ClCompile Include="friend_manager.cpp" />
+    <ClCompile Include="gameholder.cpp" />
+    <ClCompile Include="gameholder_pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="gameplaytimes_notifier.cpp" />
+    <ClCompile Include="gameworld.cpp" />
+    <ClCompile Include="game_param_config.cpp" />
+    <ClCompile Include="game_setting_manager.cpp" />
+    <ClCompile Include="game_util.cpp" />
+    <ClCompile Include="gate_handler.cpp" />
+    <ClCompile Include="gem_config.cpp" />
+    <ClCompile Include="gem_config_manager.cpp" />
+    <ClCompile Include="gem_manager.cpp" />
+    <ClCompile Include="giftcode_config.cpp" />
+    <ClCompile Include="global_setting_manager.cpp" />
+    <ClCompile Include="gm_commander.cpp" />
+    <ClCompile Include="goldtree_config.cpp" />
+    <ClCompile Include="goldtree_manager.cpp" />
+    <ClCompile Include="group_pk_config.cpp" />
+    <ClCompile Include="guide_manager.cpp" />
+    <ClCompile Include="guild_boss_communicator.cpp" />
+    <ClCompile Include="guild_channel_manager.cpp" />
+    <ClCompile Include="guild_manager.cpp" />
+    <ClCompile Include="guild_sale_config.cpp" />
+    <ClCompile Include="guild_science_recorder.cpp" />
+    <ClCompile Include="guild_task_config.cpp" />
+    <ClCompile Include="hatred_manager.cpp" />
+    <ClCompile Include="head_portrait_manager.cpp" />
+    <ClCompile Include="honor_sale_config.cpp" />
+    <ClCompile Include="horoscope_config.cpp" />
+    <ClCompile Include="horoscope_manager.cpp" />
+    <ClCompile Include="id_manager.cpp" />
+    <ClCompile Include="id_pool_manager.cpp" />
+    <ClCompile Include="id_pool_segment.cpp" />
+    <ClCompile Include="investment_manager.cpp" />
+    <ClCompile Include="investment_plan_manager.cpp" />
+    <ClCompile Include="item_base.cpp" />
+    <ClCompile Include="item_config_manager.cpp" />
+    <ClCompile Include="item_consume.cpp" />
+    <ClCompile Include="item_controller.cpp" />
+    <ClCompile Include="item_equip.cpp" />
+    <ClCompile Include="item_factory.cpp" />
+    <ClCompile Include="item_manager.cpp" />
+    <ClCompile Include="item_material.cpp" />
+    <ClCompile Include="item_stone.cpp" />
+    <ClCompile Include="levelup_config.cpp" />
+    <ClCompile Include="level_activity_manager.cpp" />
+    <ClCompile Include="level_investment_config.cpp" />
+    <ClCompile Include="level_investment_manager.cpp" />
+    <ClCompile Include="limitbuy_config.cpp" />
+    <ClCompile Include="limitbuy_manager.cpp" />
+    <ClCompile Include="liveness_config.cpp" />
+    <ClCompile Include="liveness_manager.cpp" />
+    <ClCompile Include="lua_engine.cpp" />
+    <ClCompile Include="lua_function.cpp" />
+    <ClCompile Include="lua_interface.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="lua_obj.cpp" />
+    <ClCompile Include="mail_manager.cpp" />
+    <ClCompile Include="material_config.cpp" />
+    <ClCompile Include="monster.cpp" />
+    <ClCompile Include="monster_attribute_norm_config.cpp" />
+    <ClCompile Include="monster_attribute_revise_config.cpp" />
+    <ClCompile Include="monster_config_manager.cpp" />
+    <ClCompile Include="monster_quality_modifier_config.cpp" />
+    <ClCompile Include="multiserver_battle_channel_manager.cpp" />
+    <ClCompile Include="multiserver_battle_config.cpp" />
+    <ClCompile Include="multiserver_battle_info_manager.cpp" />
+    <ClCompile Include="multiserver_battle_manager.cpp" />
+    <ClCompile Include="notifier_utils.cpp" />
+    <ClCompile Include="npc.cpp" />
+    <ClCompile Include="object.cpp" />
+    <ClCompile Include="object_with_id.cpp" />
+    <ClCompile Include="offline_event_game_manager.cpp" />
+    <ClCompile Include="offline_player.cpp" />
+    <ClCompile Include="offline_player_manager.cpp" />
+    <ClCompile Include="offline_vigor_manager.cpp" />
+    <ClCompile Include="off_line_vigor_config.cpp" />
+    <ClCompile Include="online_reward_config.cpp" />
+    <ClCompile Include="online_reward_manager.cpp" />
+    <ClCompile Include="on_recv_filter.cpp" />
+    <ClCompile Include="open_system_manager.cpp" />
+    <ClCompile Include="package_config.cpp" />
+    <ClCompile Include="package_manager.cpp" />
+    <ClCompile Include="passive_skill_card_config.cpp" />
+    <ClCompile Include="passive_skill_config.cpp" />
+    <ClCompile Include="passive_skill_config_manager.cpp" />
+    <ClCompile Include="passive_skill_manager.cpp" />
+    <ClCompile Include="path_data.cpp" />
+    <ClCompile Include="path_mover.cpp" />
+    <ClCompile Include="pay_point_lottery.cpp" />
+    <ClCompile Include="pay_point_lottery_config.cpp" />
+    <ClCompile Include="performance_analysis.cpp" />
+    <ClCompile Include="performance_manager.cpp" />
+    <ClCompile Include="performance_node.cpp" />
+    <ClCompile Include="pet.cpp" />
+    <ClCompile Include="pet_controller.cpp" />
+    <ClCompile Include="pet_manager.cpp" />
+    <ClCompile Include="player.cpp" />
+    <ClCompile Include="player_config_manager.cpp" />
+    <ClCompile Include="player_door_manager.cpp" />
+    <ClCompile Include="player_door_reward_config.cpp" />
+    <ClCompile Include="player_dungeon_manager.cpp" />
+    <ClCompile Include="player_loader.cpp" />
+    <ClCompile Include="player_manager.cpp" />
+    <ClCompile Include="player_prop_notifier.cpp" />
+    <ClCompile Include="player_saver.cpp" />
+    <ClCompile Include="player_team_manager.cpp" />
+    <ClCompile Include="plot_dungeon_manager.cpp" />
+    <ClCompile Include="point_barrel.cpp" />
+    <ClCompile Include="point_base.cpp" />
+    <ClCompile Include="point_monster.cpp" />
+    <ClCompile Include="point_touch.cpp" />
+    <ClCompile Include="point_treasure.cpp" />
+    <ClCompile Include="point_trigger.cpp" />
+    <ClCompile Include="potion_manager.cpp" />
+    <ClCompile Include="proclamation_manager.cpp" />
+    <ClCompile Include="property_set_calculater.cpp" />
+    <ClCompile Include="prop_notifier.cpp" />
+    <ClCompile Include="protect_config.cpp" />
+    <ClCompile Include="push_mover.cpp" />
+    <ClCompile Include="random_package_config.cpp" />
+    <ClCompile Include="random_package_manager.cpp" />
+    <ClCompile Include="ranking_manager.cpp" />
+    <ClCompile Include="recharge_manager.cpp" />
+    <ClCompile Include="reenergyshield_helper.cpp" />
+    <ClCompile Include="regular.cpp" />
+    <ClCompile Include="regular_action.cpp" />
+    <ClCompile Include="regular_action_attackable.cpp" />
+    <ClCompile Include="regular_action_clear_all_monsters.cpp" />
+    <ClCompile Include="regular_action_create_boss.cpp" />
+    <ClCompile Include="regular_action_create_monster.cpp" />
+    <ClCompile Include="regular_action_resurgence.cpp" />
+    <ClCompile Include="regular_action_resurgence_and_send_dead.cpp" />
+    <ClCompile Include="regular_action_sendDead.cpp" />
+    <ClCompile Include="regular_action_stop_summon.cpp" />
+    <ClCompile Include="regular_base.cpp" />
+    <ClCompile Include="regular_builder.cpp" />
+    <ClCompile Include="regular_city.cpp" />
+    <ClCompile Include="regular_daily_001.cpp" />
+    <ClCompile Include="regular_daily_002.cpp" />
+    <ClCompile Include="regular_daily_003.cpp" />
+    <ClCompile Include="regular_daily_004.cpp" />
+    <ClCompile Include="regular_daily_005.cpp" />
+    <ClCompile Include="regular_daily_006.cpp" />
+    <ClCompile Include="regular_daily_007.cpp" />
+    <ClCompile Include="regular_daily_008.cpp" />
+    <ClCompile Include="regular_daily_base.cpp" />
+    <ClCompile Include="regular_data.cpp" />
+    <ClCompile Include="regular_dungeon.cpp" />
+    <ClCompile Include="regular_event.cpp" />
+    <ClCompile Include="regular_event_all_player_dead.cpp" />
+    <ClCompile Include="regular_event_end_time.cpp" />
+    <ClCompile Include="regular_event_kick_time.cpp" />
+    <ClCompile Include="regular_event_monster_clear.cpp" />
+    <ClCompile Include="regular_event_monster_dead.cpp" />
+    <ClCompile Include="regular_event_offline_player_dead.cpp" />
+    <ClCompile Include="regular_event_player_dead.cpp" />
+    <ClCompile Include="regular_event_player_resurgence_req.cpp" />
+    <ClCompile Include="regular_event_spawn_end.cpp" />
+    <ClCompile Include="regular_event_start_time.cpp" />
+    <ClCompile Include="regular_event_timer.cpp" />
+    <ClCompile Include="regular_event_trigger.cpp" />
+    <ClCompile Include="regular_faction_pk.cpp" />
+    <ClCompile Include="regular_field_001.cpp" />
+    <ClCompile Include="regular_field_002.cpp" />
+    <ClCompile Include="regular_field_003.cpp" />
+    <ClCompile Include="regular_field_004.cpp" />
+    <ClCompile Include="regular_field_005.cpp" />
+    <ClCompile Include="regular_field_006.cpp" />
+    <ClCompile Include="regular_field_base.cpp" />
+    <ClCompile Include="regular_field_boss.cpp" />
+    <ClCompile Include="regular_first.cpp" />
+    <ClCompile Include="regular_guild.cpp" />
+    <ClCompile Include="regular_home.cpp" />
+    <ClCompile Include="regular_manager.cpp" />
+    <ClCompile Include="regular_maoxian_001.cpp" />
+    <ClCompile Include="regular_maoxian_002.cpp" />
+    <ClCompile Include="regular_maoxian_003.cpp" />
+    <ClCompile Include="regular_maoxian_004.cpp" />
+    <ClCompile Include="regular_maoxian_005.cpp" />
+    <ClCompile Include="regular_maoxian_006.cpp" />
+    <ClCompile Include="regular_maoxian_007.cpp" />
+    <ClCompile Include="regular_maoxian_008.cpp" />
+    <ClCompile Include="regular_maoxian_009.cpp" />
+    <ClCompile Include="regular_maoxian_010.cpp" />
+    <ClCompile Include="regular_maoxian_011.cpp" />
+    <ClCompile Include="regular_maoxian_012.cpp" />
+    <ClCompile Include="regular_maoxian_013.cpp" />
+    <ClCompile Include="regular_maoxian_014.cpp" />
+    <ClCompile Include="regular_maoxian_015.cpp" />
+    <ClCompile Include="regular_maoxian_016.cpp" />
+    <ClCompile Include="regular_maoxian_017.cpp" />
+    <ClCompile Include="regular_maoxian_018.cpp" />
+    <ClCompile Include="regular_maoxian_019.cpp" />
+    <ClCompile Include="regular_maoxian_020.cpp" />
+    <ClCompile Include="regular_maoxian_021.cpp" />
+    <ClCompile Include="regular_maoxian_022.cpp" />
+    <ClCompile Include="regular_maoxian_023.cpp" />
+    <ClCompile Include="regular_maoxian_024.cpp" />
+    <ClCompile Include="regular_maoxian_025.cpp" />
+    <ClCompile Include="regular_maoxian_026.cpp" />
+    <ClCompile Include="regular_maoxian_027.cpp" />
+    <ClCompile Include="regular_maoxian_028.cpp" />
+    <ClCompile Include="regular_maoxian_029.cpp" />
+    <ClCompile Include="regular_maoxian_030.cpp" />
+    <ClCompile Include="regular_maoxian_031.cpp" />
+    <ClCompile Include="regular_maoxian_032.cpp" />
+    <ClCompile Include="regular_maoxian_033.cpp" />
+    <ClCompile Include="regular_maoxian_034.cpp" />
+    <ClCompile Include="regular_maoxian_035.cpp" />
+    <ClCompile Include="regular_maoxian_036.cpp" />
+    <ClCompile Include="regular_maoxian_037.cpp" />
+    <ClCompile Include="regular_maoxian_038.cpp" />
+    <ClCompile Include="regular_maoxian_039.cpp" />
+    <ClCompile Include="regular_maoxian_040.cpp" />
+    <ClCompile Include="regular_maoxian_041.cpp" />
+    <ClCompile Include="regular_maoxian_042.cpp" />
+    <ClCompile Include="regular_maoxian_043.cpp" />
+    <ClCompile Include="regular_maoxian_044.cpp" />
+    <ClCompile Include="regular_maoxian_045.cpp" />
+    <ClCompile Include="regular_maoxian_046.cpp" />
+    <ClCompile Include="regular_maoxian_047.cpp" />
+    <ClCompile Include="regular_maoxian_048.cpp" />
+    <ClCompile Include="regular_maoxian_049.cpp" />
+    <ClCompile Include="regular_maoxian_050.cpp" />
+    <ClCompile Include="regular_maoxian_051.cpp" />
+    <ClCompile Include="regular_maoxian_052.cpp" />
+    <ClCompile Include="regular_maoxian_053.cpp" />
+    <ClCompile Include="regular_maoxian_054.cpp" />
+    <ClCompile Include="regular_maoxian_055.cpp" />
+    <ClCompile Include="regular_maoxian_056.cpp" />
+    <ClCompile Include="regular_maoxian_057.cpp" />
+    <ClCompile Include="regular_maoxian_058.cpp" />
+    <ClCompile Include="regular_maoxian_059.cpp" />
+    <ClCompile Include="regular_maoxian_060.cpp" />
+    <ClCompile Include="regular_maoxian_061.cpp" />
+    <ClCompile Include="regular_maoxian_062.cpp" />
+    <ClCompile Include="regular_maoxian_063.cpp" />
+    <ClCompile Include="regular_maoxian_064.cpp" />
+    <ClCompile Include="regular_maoxian_065.cpp" />
+    <ClCompile Include="regular_maoxian_066.cpp" />
+    <ClCompile Include="regular_maoxian_067.cpp" />
+    <ClCompile Include="regular_maoxian_068.cpp" />
+    <ClCompile Include="regular_maoxian_069.cpp" />
+    <ClCompile Include="regular_maoxian_070.cpp" />
+    <ClCompile Include="regular_maoxian_071.cpp" />
+    <ClCompile Include="regular_maoxian_072.cpp" />
+    <ClCompile Include="regular_maoxian_101.cpp" />
+    <ClCompile Include="regular_maoxian_102.cpp" />
+    <ClCompile Include="regular_maoxian_103.cpp" />
+    <ClCompile Include="regular_maoxian_104.cpp" />
+    <ClCompile Include="regular_maoxian_105.cpp" />
+    <ClCompile Include="regular_maoxian_106.cpp" />
+    <ClCompile Include="regular_maoxian_107.cpp" />
+    <ClCompile Include="regular_maoxian_108.cpp" />
+    <ClCompile Include="regular_maoxian_109.cpp" />
+    <ClCompile Include="regular_maoxian_110.cpp" />
+    <ClCompile Include="regular_maoxian_111.cpp" />
+    <ClCompile Include="regular_maoxian_112.cpp" />
+    <ClCompile Include="regular_maoxian_113.cpp" />
+    <ClCompile Include="regular_maoxian_114.cpp" />
+    <ClCompile Include="regular_maoxian_115.cpp" />
+    <ClCompile Include="regular_maoxian_116.cpp" />
+    <ClCompile Include="regular_maoxian_117.cpp" />
+    <ClCompile Include="regular_maoxian_118.cpp" />
+    <ClCompile Include="regular_maoxian_119.cpp" />
+    <ClCompile Include="regular_maoxian_120.cpp" />
+    <ClCompile Include="regular_maoxian_121.cpp" />
+    <ClCompile Include="regular_maoxian_122.cpp" />
+    <ClCompile Include="regular_maoxian_123.cpp" />
+    <ClCompile Include="regular_maoxian_124.cpp" />
+    <ClCompile Include="regular_maoxian_125.cpp" />
+    <ClCompile Include="regular_maoxian_126.cpp" />
+    <ClCompile Include="regular_maoxian_127.cpp" />
+    <ClCompile Include="regular_maoxian_128.cpp" />
+    <ClCompile Include="regular_maoxian_129.cpp" />
+    <ClCompile Include="regular_maoxian_130.cpp" />
+    <ClCompile Include="regular_maoxian_131.cpp" />
+    <ClCompile Include="regular_maoxian_132.cpp" />
+    <ClCompile Include="regular_maoxian_133.cpp" />
+    <ClCompile Include="regular_maoxian_134.cpp" />
+    <ClCompile Include="regular_maoxian_135.cpp" />
+    <ClCompile Include="regular_maoxian_136.cpp" />
+    <ClCompile Include="regular_maoxian_137.cpp" />
+    <ClCompile Include="regular_maoxian_138.cpp" />
+    <ClCompile Include="regular_maoxian_139.cpp" />
+    <ClCompile Include="regular_maoxian_140.cpp" />
+    <ClCompile Include="regular_maoxian_141.cpp" />
+    <ClCompile Include="regular_maoxian_142.cpp" />
+    <ClCompile Include="regular_maoxian_143.cpp" />
+    <ClCompile Include="regular_maoxian_144.cpp" />
+    <ClCompile Include="regular_maoxian_145.cpp" />
+    <ClCompile Include="regular_maoxian_146.cpp" />
+    <ClCompile Include="regular_maoxian_147.cpp" />
+    <ClCompile Include="regular_maoxian_148.cpp" />
+    <ClCompile Include="regular_maoxian_149.cpp" />
+    <ClCompile Include="regular_maoxian_150.cpp" />
+    <ClCompile Include="regular_maoxian_151.cpp" />
+    <ClCompile Include="regular_maoxian_152.cpp" />
+    <ClCompile Include="regular_maoxian_153.cpp" />
+    <ClCompile Include="regular_maoxian_154.cpp" />
+    <ClCompile Include="regular_maoxian_155.cpp" />
+    <ClCompile Include="regular_maoxian_156.cpp" />
+    <ClCompile Include="regular_maoxian_157.cpp" />
+    <ClCompile Include="regular_maoxian_158.cpp" />
+    <ClCompile Include="regular_maoxian_159.cpp" />
+    <ClCompile Include="regular_maoxian_160.cpp" />
+    <ClCompile Include="regular_maoxian_161.cpp" />
+    <ClCompile Include="regular_maoxian_162.cpp" />
+    <ClCompile Include="regular_maoxian_163.cpp" />
+    <ClCompile Include="regular_maoxian_164.cpp" />
+    <ClCompile Include="regular_maoxian_165.cpp" />
+    <ClCompile Include="regular_maoxian_166.cpp" />
+    <ClCompile Include="regular_maoxian_167.cpp" />
+    <ClCompile Include="regular_maoxian_168.cpp" />
+    <ClCompile Include="regular_maoxian_169.cpp" />
+    <ClCompile Include="regular_maoxian_170.cpp" />
+    <ClCompile Include="regular_maoxian_171.cpp" />
+    <ClCompile Include="regular_maoxian_172.cpp" />
+    <ClCompile Include="regular_maoxian_201.cpp" />
+    <ClCompile Include="regular_maoxian_202.cpp" />
+    <ClCompile Include="regular_maoxian_203.cpp" />
+    <ClCompile Include="regular_maoxian_204.cpp" />
+    <ClCompile Include="regular_maoxian_205.cpp" />
+    <ClCompile Include="regular_maoxian_206.cpp" />
+    <ClCompile Include="regular_maoxian_207.cpp" />
+    <ClCompile Include="regular_maoxian_208.cpp" />
+    <ClCompile Include="regular_maoxian_209.cpp" />
+    <ClCompile Include="regular_maoxian_210.cpp" />
+    <ClCompile Include="regular_maoxian_211.cpp" />
+    <ClCompile Include="regular_maoxian_212.cpp" />
+    <ClCompile Include="regular_maoxian_213.cpp" />
+    <ClCompile Include="regular_maoxian_214.cpp" />
+    <ClCompile Include="regular_maoxian_215.cpp" />
+    <ClCompile Include="regular_maoxian_216.cpp" />
+    <ClCompile Include="regular_maoxian_217.cpp" />
+    <ClCompile Include="regular_maoxian_218.cpp" />
+    <ClCompile Include="regular_maoxian_219.cpp" />
+    <ClCompile Include="regular_maoxian_220.cpp" />
+    <ClCompile Include="regular_maoxian_221.cpp" />
+    <ClCompile Include="regular_maoxian_222.cpp" />
+    <ClCompile Include="regular_maoxian_223.cpp" />
+    <ClCompile Include="regular_maoxian_224.cpp" />
+    <ClCompile Include="regular_maoxian_225.cpp" />
+    <ClCompile Include="regular_maoxian_226.cpp" />
+    <ClCompile Include="regular_maoxian_227.cpp" />
+    <ClCompile Include="regular_maoxian_228.cpp" />
+    <ClCompile Include="regular_maoxian_229.cpp" />
+    <ClCompile Include="regular_maoxian_230.cpp" />
+    <ClCompile Include="regular_maoxian_231.cpp" />
+    <ClCompile Include="regular_maoxian_232.cpp" />
+    <ClCompile Include="regular_maoxian_233.cpp" />
+    <ClCompile Include="regular_maoxian_234.cpp" />
+    <ClCompile Include="regular_maoxian_235.cpp" />
+    <ClCompile Include="regular_maoxian_236.cpp" />
+    <ClCompile Include="regular_maoxian_237.cpp" />
+    <ClCompile Include="regular_maoxian_238.cpp" />
+    <ClCompile Include="regular_maoxian_239.cpp" />
+    <ClCompile Include="regular_maoxian_240.cpp" />
+    <ClCompile Include="regular_maoxian_241.cpp" />
+    <ClCompile Include="regular_maoxian_242.cpp" />
+    <ClCompile Include="regular_maoxian_243.cpp" />
+    <ClCompile Include="regular_maoxian_244.cpp" />
+    <ClCompile Include="regular_maoxian_245.cpp" />
+    <ClCompile Include="regular_maoxian_246.cpp" />
+    <ClCompile Include="regular_maoxian_247.cpp" />
+    <ClCompile Include="regular_maoxian_248.cpp" />
+    <ClCompile Include="regular_maoxian_249.cpp" />
+    <ClCompile Include="regular_maoxian_250.cpp" />
+    <ClCompile Include="regular_maoxian_251.cpp" />
+    <ClCompile Include="regular_maoxian_252.cpp" />
+    <ClCompile Include="regular_maoxian_253.cpp" />
+    <ClCompile Include="regular_maoxian_254.cpp" />
+    <ClCompile Include="regular_maoxian_255.cpp" />
+    <ClCompile Include="regular_maoxian_256.cpp" />
+    <ClCompile Include="regular_maoxian_257.cpp" />
+    <ClCompile Include="regular_maoxian_258.cpp" />
+    <ClCompile Include="regular_maoxian_259.cpp" />
+    <ClCompile Include="regular_maoxian_260.cpp" />
+    <ClCompile Include="regular_maoxian_261.cpp" />
+    <ClCompile Include="regular_maoxian_262.cpp" />
+    <ClCompile Include="regular_maoxian_263.cpp" />
+    <ClCompile Include="regular_maoxian_264.cpp" />
+    <ClCompile Include="regular_maoxian_265.cpp" />
+    <ClCompile Include="regular_maoxian_266.cpp" />
+    <ClCompile Include="regular_maoxian_267.cpp" />
+    <ClCompile Include="regular_maoxian_268.cpp" />
+    <ClCompile Include="regular_maoxian_269.cpp" />
+    <ClCompile Include="regular_maoxian_270.cpp" />
+    <ClCompile Include="regular_maoxian_271.cpp" />
+    <ClCompile Include="regular_maoxian_272.cpp" />
+    <ClCompile Include="regular_maoxian_base.cpp" />
+    <ClCompile Include="regular_multiple.cpp" />
+    <ClCompile Include="regular_pvp.cpp" />
+    <ClCompile Include="regular_rog_dungeon.cpp" />
+    <ClCompile Include="regular_single.cpp" />
+    <ClCompile Include="regular_void_field.cpp" />
+    <ClCompile Include="regular_void_field_solo.cpp" />
+    <ClCompile Include="regular_world.cpp" />
+    <ClCompile Include="regular_world_boss.cpp" />
+    <ClCompile Include="regular_yijie_001.cpp" />
+    <ClCompile Include="regular_yijie_002.cpp" />
+    <ClCompile Include="regular_yijie_003.cpp" />
+    <ClCompile Include="regular_yijie_004.cpp" />
+    <ClCompile Include="regular_yijie_005.cpp" />
+    <ClCompile Include="regular_yijie_006.cpp" />
+    <ClCompile Include="regular_yijie_007.cpp" />
+    <ClCompile Include="regular_yijie_008.cpp" />
+    <ClCompile Include="regular_yijie_009.cpp" />
+    <ClCompile Include="regular_yijie_010.cpp" />
+    <ClCompile Include="regular_yijie_011.cpp" />
+    <ClCompile Include="regular_yijie_012.cpp" />
+    <ClCompile Include="regular_yijie_013.cpp" />
+    <ClCompile Include="regular_yijie_014.cpp" />
+    <ClCompile Include="regular_yijie_015.cpp" />
+    <ClCompile Include="regular_yijie_016.cpp" />
+    <ClCompile Include="regular_yijie_017.cpp" />
+    <ClCompile Include="regular_yijie_018.cpp" />
+    <ClCompile Include="regular_yijie_019.cpp" />
+    <ClCompile Include="regular_yijie_020.cpp" />
+    <ClCompile Include="regular_yijie_021.cpp" />
+    <ClCompile Include="regular_yijie_022.cpp" />
+    <ClCompile Include="regular_yijie_023.cpp" />
+    <ClCompile Include="regular_yijie_024.cpp" />
+    <ClCompile Include="regular_yijie_025.cpp" />
+    <ClCompile Include="regular_yijie_026.cpp" />
+    <ClCompile Include="regular_yijie_027.cpp" />
+    <ClCompile Include="regular_yijie_028.cpp" />
+    <ClCompile Include="regular_yijie_029.cpp" />
+    <ClCompile Include="regular_yijie_030.cpp" />
+    <ClCompile Include="regular_yijie_031.cpp" />
+    <ClCompile Include="regular_yijie_032.cpp" />
+    <ClCompile Include="regular_yijie_033.cpp" />
+    <ClCompile Include="regular_yijie_034.cpp" />
+    <ClCompile Include="regular_yijie_035.cpp" />
+    <ClCompile Include="regular_yijie_036.cpp" />
+    <ClCompile Include="regular_yijie_037.cpp" />
+    <ClCompile Include="regular_yijie_038.cpp" />
+    <ClCompile Include="regular_yijie_039.cpp" />
+    <ClCompile Include="regular_yijie_040.cpp" />
+    <ClCompile Include="regular_yijie_base.cpp" />
+    <ClCompile Include="reincarnated_data.cpp" />
+    <ClCompile Include="relife_helper.cpp" />
+    <ClCompile Include="remana_helper.cpp" />
+    <ClCompile Include="resurgence_helper.cpp" />
+    <ClCompile Include="ridetrain.cpp" />
+    <ClCompile Include="ride_config.cpp" />
+    <ClCompile Include="ride_manager.cpp" />
+    <ClCompile Include="rog_regular_event.cpp" />
+    <ClCompile Include="rog_regular_event_combo_kill.cpp" />
+    <ClCompile Include="rog_regular_event_damage_rank.cpp" />
+    <ClCompile Include="rog_regular_event_monster_clear.cpp" />
+    <ClCompile Include="rog_regular_event_monster_dead.cpp" />
+    <ClCompile Include="rog_regular_event_player_dead.cpp" />
+    <ClCompile Include="rog_regular_event_three_player.cpp" />
+    <ClCompile Include="rog_regular_event_timer.cpp" />
+    <ClCompile Include="rtti.cpp" />
+    <ClCompile Include="rune_config.cpp" />
+    <ClCompile Include="sale_config.cpp" />
+    <ClCompile Include="scene.cpp" />
+    <ClCompile Include="sceneobject.cpp" />
+    <ClCompile Include="scene_notifier.cpp" />
+    <ClCompile Include="scene_notifier_all.cpp" />
+    <ClCompile Include="scene_notifier_aoi.cpp" />
+    <ClCompile Include="script\lua\lapi.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\lauxlib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\lbaselib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\lcode.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\ldblib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\ldebug.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\ldo.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\ldump.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\lfunc.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\lgc.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\linit.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\liolib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\llex.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\lmathlib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\lmem.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\loadlib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\lobject.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\lopcodes.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\loslib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\lparser.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\lstate.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\lstring.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\lstrlib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\ltable.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\ltablib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\ltm.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\luac.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\lundump.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\lvm.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\lzio.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\lua\print.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\tolua\tolua_event.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\tolua\tolua_is.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\tolua\tolua_map.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\tolua\tolua_push.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="script\tolua\tolua_to.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="server_config.cpp" />
+    <ClCompile Include="setting_manager.cpp" />
+    <ClCompile Include="shop_manager.cpp" />
+    <ClCompile Include="shop_service_manager.cpp" />
+    <ClCompile Include="shorcut_config.cpp" />
+    <ClCompile Include="shorcut_manager.cpp" />
+    <ClCompile Include="sign_gain_config.cpp" />
+    <ClCompile Include="sign_makeup_config.cpp" />
+    <ClCompile Include="sign_manager.cpp" />
+    <ClCompile Include="singgle_answer_config.cpp" />
+    <ClCompile Include="single_answer_manager.cpp" />
+    <ClCompile Include="skill_bullet_trajectory_collision.cpp" />
+    <ClCompile Include="skill_bullet_trajectory_direct.cpp" />
+    <ClCompile Include="skill_config.cpp" />
+    <ClCompile Include="skill_config_manager.cpp" />
+    <ClCompile Include="skill_controller.cpp" />
+    <ClCompile Include="skill_data_parser.cpp" />
+    <ClCompile Include="skill_info.cpp" />
+    <ClCompile Include="skill_info_manager.cpp" />
+    <ClCompile Include="skill_levelup_config.cpp" />
+    <ClCompile Include="skill_logic_base.cpp" />
+    <ClCompile Include="skill_logic_bullet.cpp" />
+    <ClCompile Include="skill_logic_cast.cpp" />
+    <ClCompile Include="skill_logic_hit.cpp" />
+    <ClCompile Include="skill_logic_launch.cpp" />
+    <ClCompile Include="skill_logic_strike.cpp" />
+    <ClCompile Include="skill_manager.cpp" />
+    <ClCompile Include="skill_node_pool.cpp" />
+    <ClCompile Include="skill_object.cpp" />
+    <ClCompile Include="skill_strengthen_manager.cpp" />
+    <ClCompile Include="skill_utils.cpp" />
+    <ClCompile Include="soldier.cpp" />
+    <ClCompile Include="soldier_prop_notifier.cpp" />
+    <ClCompile Include="soldier_talent_manager.cpp" />
+    <ClCompile Include="soul_dungeon_manager.cpp" />
+    <ClCompile Include="spawn.cpp" />
+    <ClCompile Include="spawn_controller.cpp" />
+    <ClCompile Include="spawn_controller_factory.cpp" />
+    <ClCompile Include="spawn_controller_max_num.cpp" />
+    <ClCompile Include="spawn_controller_speed.cpp" />
+    <ClCompile Include="spawn_controller_trigger.cpp" />
+    <ClCompile Include="spawn_controller_wait_wave_dead.cpp" />
+    <ClCompile Include="spawn_controller_wave_delay.cpp" />
+    <ClCompile Include="spawn_wave.cpp" />
+    <ClCompile Include="special_activity_manager_gs.cpp" />
+    <ClCompile Include="state.cpp" />
+    <ClCompile Include="state_attack.cpp" />
+    <ClCompile Include="state_controller.cpp" />
+    <ClCompile Include="state_dance.cpp" />
+    <ClCompile Include="state_die.cpp" />
+    <ClCompile Include="state_idle.cpp" />
+    <ClCompile Include="state_movie.cpp" />
+    <ClCompile Include="state_run.cpp" />
+    <ClCompile Include="state_singing.cpp" />
+    <ClCompile Include="state_stun.cpp" />
+    <ClCompile Include="state_touch.cpp" />
+    <ClCompile Include="state_walk.cpp" />
+    <ClCompile Include="step_mover.cpp" />
+    <ClCompile Include="stone_config.cpp" />
+    <ClCompile Include="stone_turn_gold_config.cpp" />
+    <ClCompile Include="stone_turn_gold_manager.cpp" />
+    <ClCompile Include="store_manager.cpp" />
+    <ClCompile Include="sub_regular.cpp" />
+    <ClCompile Include="sub_regular_boss.cpp" />
+    <ClCompile Include="sub_regular_hook.cpp" />
+    <ClCompile Include="sub_regular_monster.cpp" />
+    <ClCompile Include="sword_config.cpp" />
+    <ClCompile Include="sword_manager.cpp" />
+    <ClCompile Include="synthetize_config.cpp" />
+    <ClCompile Include="system_config_manager.cpp" />
+    <ClCompile Include="system_setting_config.cpp" />
+    <ClCompile Include="task_config_manager.cpp" />
+    <ClCompile Include="task_data.cpp" />
+    <ClCompile Include="task_data_achive.cpp" />
+    <ClCompile Include="task_data_branch.cpp" />
+    <ClCompile Include="task_data_crusade.cpp" />
+    <ClCompile Include="task_data_daily.cpp" />
+    <ClCompile Include="task_data_factory.cpp" />
+    <ClCompile Include="task_data_festive.cpp" />
+    <ClCompile Include="task_data_game.cpp" />
+    <ClCompile Include="task_data_guard.cpp" />
+    <ClCompile Include="task_data_guild.cpp" />
+    <ClCompile Include="task_data_main.cpp" />
+    <ClCompile Include="task_data_target.cpp" />
+    <ClCompile Include="task_define.cpp" />
+    <ClCompile Include="task_festive_config.cpp" />
+    <ClCompile Include="task_festive_manager.cpp" />
+    <ClCompile Include="task_game_config.cpp" />
+    <ClCompile Include="task_game_config_data.cpp" />
+    <ClCompile Include="task_game_manager.cpp" />
+    <ClCompile Include="task_manager.cpp" />
+    <ClCompile Include="task_manage_agent.cpp" />
+    <ClCompile Include="task_target.cpp" />
+    <ClCompile Include="td_channel_manager.cpp" />
+    <ClCompile Include="td_config.cpp" />
+    <ClCompile Include="team_channel_manager.cpp" />
+    <ClCompile Include="team_dungeon_config.cpp" />
+    <ClCompile Include="team_manager.cpp" />
+    <ClCompile Include="team_relationinfo.cpp" />
+    <ClCompile Include="team_relationship.cpp" />
+    <ClCompile Include="timing_trigger_manager.cpp" />
+    <ClCompile Include="title_config.cpp" />
+    <ClCompile Include="title_manager.cpp" />
+    <ClCompile Include="top_up_rank_manager.cpp" />
+    <ClCompile Include="touch.cpp" />
+    <ClCompile Include="touch_controller.cpp" />
+    <ClCompile Include="tower_defence_config.cpp" />
+    <ClCompile Include="tower_defence_manager.cpp" />
+    <ClCompile Include="trade_manager.cpp" />
+    <ClCompile Include="treasury_config.cpp" />
+    <ClCompile Include="treasury_manager.cpp" />
+    <ClCompile Include="trigger.cpp" />
+    <ClCompile Include="trigger_config.cpp" />
+    <ClCompile Include="twilight_war_channel_manager.cpp" />
+    <ClCompile Include="twilight_war_communicator.cpp" />
+    <ClCompile Include="twilight_war_manager.cpp" />
+    <ClCompile Include="vigor_config.cpp" />
+    <ClCompile Include="vigor_manager.cpp" />
+    <ClCompile Include="vip_card_config.cpp" />
+    <ClCompile Include="vip_gift_config.cpp" />
+    <ClCompile Include="vip_manager.cpp" />
+    <ClCompile Include="vip_only_dungeon_config.cpp" />
+    <ClCompile Include="vip_only_dungeon_manager.cpp" />
+    <ClCompile Include="vip_reward_config.cpp" />
+    <ClCompile Include="vip_statistics_manager.cpp" />
+    <ClCompile Include="void_field_config.cpp" />
+    <ClCompile Include="void_field_manager.cpp" />
+    <ClCompile Include="void_field_setting_config.cpp" />
+    <ClCompile Include="void_field_solo_config.cpp" />
+    <ClCompile Include="void_field_solo_manager.cpp" />
+    <ClCompile Include="welcome_reward_config.cpp" />
+    <ClCompile Include="wing_attr_config.cpp" />
+    <ClCompile Include="wing_attr_config_manager.cpp" />
+    <ClCompile Include="wing_manager.cpp" />
+    <ClCompile Include="world_boss_channel_manager.cpp" />
+    <ClCompile Include="world_boss_config.cpp" />
+    <ClCompile Include="world_boss_manager.cpp" />
+    <ClCompile Include="world_map_channel_manager.cpp" />
+    <ClCompile Include="world_map_config.cpp" />
+    <ClCompile Include="world_map_manager.cpp" />
+    <ClCompile Include="world_prop_communicator.cpp" />
+    <ClCompile Include="zombie_config.cpp" />
+    <ClCompile Include="zombie_manager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="action_controller.h" />
+    <ClInclude Include="action_creature_controller.h" />
+    <ClInclude Include="action_factory.h" />
+    <ClInclude Include="action_player_controller.h" />
+    <ClInclude Include="activity_manager.h" />
+    <ClInclude Include="adventure_config.h" />
+    <ClInclude Include="adventure_manager.h" />
+    <ClInclude Include="ai_action_base.h" />
+    <ClInclude Include="ai_action_container.h" />
+    <ClInclude Include="ai_action_flee.h" />
+    <ClInclude Include="ai_action_moveto.h" />
+    <ClInclude Include="ai_action_move_random.h" />
+    <ClInclude Include="ai_action_pathing.h" />
+    <ClInclude Include="ai_action_seek_object.h" />
+    <ClInclude Include="ai_action_select_skill.h" />
+    <ClInclude Include="ai_action_skill_to.h" />
+    <ClInclude Include="ai_action_stop.h" />
+    <ClInclude Include="ai_action_teleport.h" />
+    <ClInclude Include="ai_condition_base.h" />
+    <ClInclude Include="ai_condition_call_pet_count.h" />
+    <ClInclude Include="ai_condition_cd.h" />
+    <ClInclude Include="ai_condition_enemy_exist.h" />
+    <ClInclude Include="ai_condition_enemy_in_range.h" />
+    <ClInclude Include="ai_condition_find_enemy.h" />
+    <ClInclude Include="ai_condition_finish_path.h" />
+    <ClInclude Include="ai_condition_in_skill_range.h" />
+    <ClInclude Include="ai_condition_lack_hp.h" />
+    <ClInclude Include="ai_condition_lack_mp.h" />
+    <ClInclude Include="ai_condition_lost_target.h" />
+    <ClInclude Include="ai_condition_master_attack.h" />
+    <ClInclude Include="ai_condition_master_in_range.h" />
+    <ClInclude Include="ai_condition_master_onhit.h" />
+    <ClInclude Include="ai_condition_onhit.h" />
+    <ClInclude Include="ai_condition_onstate.h" />
+    <ClInclude Include="ai_condition_pet_life.h" />
+    <ClInclude Include="ai_condition_satisfy.h" />
+    <ClInclude Include="ai_condition_timer.h" />
+    <ClInclude Include="ai_container.h" />
+    <ClInclude Include="ai_controller.h" />
+    <ClInclude Include="ai_define.h" />
+    <ClInclude Include="ai_factory.h" />
+    <ClInclude Include="ai_group.h" />
+    <ClInclude Include="ai_group_register.h" />
+    <ClInclude Include="ai_manager.h" />
+    <ClInclude Include="ai_skill_data.h" />
+    <ClInclude Include="ai_state.h" />
+    <ClInclude Include="alchemy_config.h" />
+    <ClInclude Include="alchemy_config_manager.h" />
+    <ClInclude Include="alchemy_manager.h" />
+    <ClInclude Include="answer_manager.h" />
+    <ClInclude Include="answer_question_config.h" />
+    <ClInclude Include="answer_question_manager.h" />
+    <ClInclude Include="aoi_define.h" />
+    <ClInclude Include="aoi_manager.h" />
+    <ClInclude Include="aoi_object.h" />
+    <ClInclude Include="aoi_system_manager.h" />
+    <ClInclude Include="ashura_channel_manager.h" />
+    <ClInclude Include="ashura_config.h" />
+    <ClInclude Include="ashura_manager.h" />
+    <ClInclude Include="ashura_recorder.h" />
+    <ClInclude Include="aura.h" />
+    <ClInclude Include="auto_fight_config.h" />
+    <ClInclude Include="babel_manager.h" />
+    <ClInclude Include="bag_grid_open_cost_config.h" />
+    <ClInclude Include="bag_manager.h" />
+    <ClInclude Include="battle_define.h" />
+    <ClInclude Include="battle_manager.h" />
+    <ClInclude Include="battle_offline_config.h" />
+    <ClInclude Include="battle_recorder.h" />
+    <ClInclude Include="battle_state_manager.h" />
+    <ClInclude Include="battle_unit.h" />
+    <ClInclude Include="battle_unit_communicator.h" />
+    <ClInclude Include="battle_unit_connecter.h" />
+    <ClInclude Include="bh_manager.h" />
+    <ClInclude Include="bind_money_point_sale_config.h" />
+    <ClInclude Include="boss.h" />
+    <ClInclude Include="bouns_config_manager.h" />
+    <ClInclude Include="box2d_define.h" />
+    <ClInclude Include="brave_heart_config.h" />
+    <ClInclude Include="buff.h" />
+    <ClInclude Include="buff_config.h" />
+    <ClInclude Include="buff_controller.h" />
+    <ClInclude Include="buff_data.h" />
+    <ClInclude Include="buff_define.h" />
+    <ClInclude Include="buff_func_absorb_damage.h" />
+    <ClInclude Include="buff_func_base.h" />
+    <ClInclude Include="buff_func_bleed.h" />
+    <ClInclude Include="buff_func_damage.h" />
+    <ClInclude Include="buff_func_damage_scale.h" />
+    <ClInclude Include="buff_func_exp_multiple.h" />
+    <ClInclude Include="buff_func_factory.h" />
+    <ClInclude Include="buff_func_heal.h" />
+    <ClInclude Include="buff_func_immortal.h" />
+    <ClInclude Include="buff_func_magic_damage.h" />
+    <ClInclude Include="buff_func_prop_change.h" />
+    <ClInclude Include="buff_func_prop_scale.h" />
+    <ClInclude Include="buff_func_shock.h" />
+    <ClInclude Include="buff_func_silence.h" />
+    <ClInclude Include="buff_func_stun.h" />
+    <ClInclude Include="buff_manager.h" />
+    <ClInclude Include="buy_cheap_manager.h" />
+    <ClInclude Include="capture_flag_channel_manager.h" />
+    <ClInclude Include="capture_flag_config.h" />
+    <ClInclude Include="capture_flag_manager.h" />
+    <ClInclude Include="cell_visitor.h" />
+    <ClInclude Include="center_config.h" />
+    <ClInclude Include="center_handler.h" />
+    <ClInclude Include="center_handler_helper.h" />
+    <ClInclude Include="channel_manager.h" />
+    <ClInclude Include="chaos_faction_channel_manager.h" />
+    <ClInclude Include="chaos_faction_config.h" />
+    <ClInclude Include="chaos_faction_manager.h" />
+    <ClInclude Include="chat_manager.h" />
+    <ClInclude Include="checkpoint.h" />
+    <ClInclude Include="city_channel_manager.h" />
+    <ClInclude Include="city_fight_channel_manager.h" />
+    <ClInclude Include="city_fight_manager.h" />
+    <ClInclude Include="city_survival_channel_manager.h" />
+    <ClInclude Include="city_survival_config.h" />
+    <ClInclude Include="city_survival_manager.h" />
+    <ClInclude Include="config_manager.h" />
+    <ClInclude Include="consume_config.h" />
+    <ClInclude Include="contrast_manager.h" />
+    <ClInclude Include="creature.h" />
+    <ClInclude Include="cross_team_channel_manager.h" />
+    <ClInclude Include="cross_team_manager.h" />
+    <ClInclude Include="crusade_boss_channel_manager.h" />
+    <ClInclude Include="daily_dungeon_manager.h" />
+    <ClInclude Include="daily_fashion_manager.h" />
+    <ClInclude Include="dance_config.h" />
+    <ClInclude Include="day_investment_config.h" />
+    <ClInclude Include="day_investment_manager.h" />
+    <ClInclude Include="decompose_config.h" />
+    <ClInclude Include="decompose_manager.h" />
+    <ClInclude Include="default_channel_manager.h" />
+    <ClInclude Include="design_config_manager.h" />
+    <ClInclude Include="donate_config.h" />
+    <ClInclude Include="donate_manager.h" />
+    <ClInclude Include="drop_object.h" />
+    <ClInclude Include="drop_ruler.h" />
+    <ClInclude Include="dungeon.h" />
+    <ClInclude Include="dungeon_clearance_bonus_config.h" />
+    <ClInclude Include="dungeon_config_manager.h" />
+    <ClInclude Include="dungeon_data.h" />
+    <ClInclude Include="dungeon_drop_config.h" />
+    <ClInclude Include="dungeon_exp_bonus_config.h" />
+    <ClInclude Include="dungeon_gain_config.h" />
+    <ClInclude Include="dungeon_manager.h" />
+    <ClInclude Include="dungeon_map_manager.h" />
+    <ClInclude Include="dungeon_rule.h" />
+    <ClInclude Include="dungeon_score_config.h" />
+    <ClInclude Include="dungeon_set.h" />
+    <ClInclude Include="dungeon_times_manager.h" />
+    <ClInclude Include="egg_config.h" />
+    <ClInclude Include="egg_manager.h" />
+    <ClInclude Include="enemy_manager.h" />
+    <ClInclude Include="equip_attribute_config.h" />
+    <ClInclude Include="equip_config.h" />
+    <ClInclude Include="equip_enchantment_config.h" />
+    <ClInclude Include="equip_lighting.h" />
+    <ClInclude Include="equip_manager.h" />
+    <ClInclude Include="equip_quality_attribute_config.h" />
+    <ClInclude Include="equip_quality_up_config.h" />
+    <ClInclude Include="equip_star_up_config.h" />
+    <ClInclude Include="equip_strengthen_manager.h" />
+    <ClInclude Include="equip_wash_up_config.h" />
+    <ClInclude Include="event.h" />
+    <ClInclude Include="event_define.h" />
+    <ClInclude Include="event_dispatcher.h" />
+    <ClInclude Include="event_receiver.h" />
+    <ClInclude Include="expend_manager.h" />
+    <ClInclude Include="experience_vip.h" />
+    <ClInclude Include="faction_manager.h" />
+    <ClInclude Include="faction_pk_channel_manager.h" />
+    <ClInclude Include="faction_pk_config.h" />
+    <ClInclude Include="fashion_config.h" />
+    <ClInclude Include="fashion_manager.h" />
+    <ClInclude Include="fcm_manager.h" />
+    <ClInclude Include="formula_config.h" />
+    <ClInclude Include="formula_manager.h" />
+    <ClInclude Include="friend_manager.h" />
+    <ClInclude Include="gameholder.h" />
+    <ClInclude Include="gameholder_pch.h" />
+    <ClInclude Include="gameplaytimes_notifier.h" />
+    <ClInclude Include="gameworld.h" />
+    <ClInclude Include="game_define.h" />
+    <ClInclude Include="game_param_config.h" />
+    <ClInclude Include="game_setting_manager.h" />
+    <ClInclude Include="game_util.h" />
+    <ClInclude Include="gate_handler.h" />
+    <ClInclude Include="gem_config.h" />
+    <ClInclude Include="gem_config_manager.h" />
+    <ClInclude Include="gem_manager.h" />
+    <ClInclude Include="giftcode_config.h" />
+    <ClInclude Include="global_setting_manager.h" />
+    <ClInclude Include="gm_commander.h" />
+    <ClInclude Include="goldtree_config.h" />
+    <ClInclude Include="goldtree_manager.h" />
+    <ClInclude Include="group_pk_config.h" />
+    <ClInclude Include="guide_manager.h" />
+    <ClInclude Include="guild_boss_communicator.h" />
+    <ClInclude Include="guild_channel_manager.h" />
+    <ClInclude Include="guild_manager.h" />
+    <ClInclude Include="guild_sale_config.h" />
+    <ClInclude Include="guild_science_recorder.h" />
+    <ClInclude Include="guild_task_config.h" />
+    <ClInclude Include="hatred_manager.h" />
+    <ClInclude Include="head_portrait_manager.h" />
+    <ClInclude Include="honor_sale_config.h" />
+    <ClInclude Include="horoscope_config.h" />
+    <ClInclude Include="horoscope_manager.h" />
+    <ClInclude Include="id_manager.h" />
+    <ClInclude Include="id_pool_manager.h" />
+    <ClInclude Include="id_pool_segment.h" />
+    <ClInclude Include="investment_manager.h" />
+    <ClInclude Include="investment_plan_manager.h" />
+    <ClInclude Include="item_base.h" />
+    <ClInclude Include="item_config_manager.h" />
+    <ClInclude Include="item_consume.h" />
+    <ClInclude Include="item_controller.h" />
+    <ClInclude Include="item_equip.h" />
+    <ClInclude Include="item_factory.h" />
+    <ClInclude Include="item_manager.h" />
+    <ClInclude Include="item_material.h" />
+    <ClInclude Include="item_stone.h" />
+    <ClInclude Include="levelup_config.h" />
+    <ClInclude Include="level_activity_manager.h" />
+    <ClInclude Include="level_investment_config.h" />
+    <ClInclude Include="level_investment_manager.h" />
+    <ClInclude Include="limitbuy_config.h" />
+    <ClInclude Include="limitbuy_manager.h" />
+    <ClInclude Include="liveness_config.h" />
+    <ClInclude Include="liveness_manager.h" />
+    <ClInclude Include="lua_engine.h" />
+    <ClInclude Include="lua_function.h" />
+    <ClInclude Include="lua_gen.h" />
+    <ClInclude Include="lua_obj.h" />
+    <ClInclude Include="mail_manager.h" />
+    <ClInclude Include="material_config.h" />
+    <ClInclude Include="monster.h" />
+    <ClInclude Include="monster_attribute_norm_config.h" />
+    <ClInclude Include="monster_attribute_revise_config.h" />
+    <ClInclude Include="monster_config_manager.h" />
+    <ClInclude Include="monster_quality_modifier_config.h" />
+    <ClInclude Include="multiserver_battle_channel_manager.h" />
+    <ClInclude Include="multiserver_battle_config.h" />
+    <ClInclude Include="multiserver_battle_info_manager.h" />
+    <ClInclude Include="multiserver_battle_manager.h" />
+    <ClInclude Include="notifier_utils.h" />
+    <ClInclude Include="npc.h" />
+    <ClInclude Include="object.h" />
+    <ClInclude Include="object_with_id.h" />
+    <ClInclude Include="offline_event_game_manager.h" />
+    <ClInclude Include="offline_player.h" />
+    <ClInclude Include="offline_player_manager.h" />
+    <ClInclude Include="offline_vigor_manager.h" />
+    <ClInclude Include="off_line_vigor_config.h" />
+    <ClInclude Include="online_reward_config.h" />
+    <ClInclude Include="online_reward_manager.h" />
+    <ClInclude Include="on_recv_filter.h" />
+    <ClInclude Include="open_system_manager.h" />
+    <ClInclude Include="package_config.h" />
+    <ClInclude Include="package_manager.h" />
+    <ClInclude Include="passive_skill_card_config.h" />
+    <ClInclude Include="passive_skill_config.h" />
+    <ClInclude Include="passive_skill_config_manager.h" />
+    <ClInclude Include="passive_skill_manager.h" />
+    <ClInclude Include="path_data.h" />
+    <ClInclude Include="path_mover.h" />
+    <ClInclude Include="pay_point_lottery.h" />
+    <ClInclude Include="pay_point_lottery_config.h" />
+    <ClInclude Include="performance_analysis.h" />
+    <ClInclude Include="performance_manager.h" />
+    <ClInclude Include="performance_node.h" />
+    <ClInclude Include="pet.h" />
+    <ClInclude Include="pet_controller.h" />
+    <ClInclude Include="pet_manager.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="player_config_manager.h" />
+    <ClInclude Include="player_door_manager.h" />
+    <ClInclude Include="player_door_reward_config.h" />
+    <ClInclude Include="player_dungeon_manager.h" />
+    <ClInclude Include="player_loader.h" />
+    <ClInclude Include="player_manager.h" />
+    <ClInclude Include="player_prop_notifier.h" />
+    <ClInclude Include="player_saver.h" />
+    <ClInclude Include="player_team_manager.h" />
+    <ClInclude Include="plot_dungeon_manager.h" />
+    <ClInclude Include="point_barrel.h" />
+    <ClInclude Include="point_base.h" />
+    <ClInclude Include="point_monster.h" />
+    <ClInclude Include="point_touch.h" />
+    <ClInclude Include="point_treasure.h" />
+    <ClInclude Include="point_trigger.h" />
+    <ClInclude Include="potion_manager.h" />
+    <ClInclude Include="proclamation_manager.h" />
+    <ClInclude Include="property_set_calculater.h" />
+    <ClInclude Include="prop_notifier.h" />
+    <ClInclude Include="protect_config.h" />
+    <ClInclude Include="push_mover.h" />
+    <ClInclude Include="random_package_config.h" />
+    <ClInclude Include="random_package_manager.h" />
+    <ClInclude Include="ranking_manager.h" />
+    <ClInclude Include="recharge_manager.h" />
+    <ClInclude Include="reenergyshield_helper.h" />
+    <ClInclude Include="regular.h" />
+    <ClInclude Include="regular_action.h" />
+    <ClInclude Include="regular_action_attackable.h" />
+    <ClInclude Include="regular_action_clear_all_monsters.h" />
+    <ClInclude Include="regular_action_create_boss.h" />
+    <ClInclude Include="regular_action_create_monster.h" />
+    <ClInclude Include="regular_action_resurgence.h" />
+    <ClInclude Include="regular_action_resurgence_and_send_dead.h" />
+    <ClInclude Include="regular_action_sendDead.h" />
+    <ClInclude Include="regular_action_stop_summon.h" />
+    <ClInclude Include="regular_base.h" />
+    <ClInclude Include="regular_builder.h" />
+    <ClInclude Include="regular_city.h" />
+    <ClInclude Include="regular_daily_001.h" />
+    <ClInclude Include="regular_daily_002.h" />
+    <ClInclude Include="regular_daily_003.h" />
+    <ClInclude Include="regular_daily_004.h" />
+    <ClInclude Include="regular_daily_005.h" />
+    <ClInclude Include="regular_daily_006.h" />
+    <ClInclude Include="regular_daily_007.h" />
+    <ClInclude Include="regular_daily_008.h" />
+    <ClInclude Include="regular_daily_base.h" />
+    <ClInclude Include="regular_data.h" />
+    <ClInclude Include="regular_define.h" />
+    <ClInclude Include="regular_dungeon.h" />
+    <ClInclude Include="regular_event.h" />
+    <ClInclude Include="regular_event_all_player_dead.h" />
+    <ClInclude Include="regular_event_end_time.h" />
+    <ClInclude Include="regular_event_kick_time.h" />
+    <ClInclude Include="regular_event_monster_clear.h" />
+    <ClInclude Include="regular_event_monster_dead.h" />
+    <ClInclude Include="regular_event_offline_player_dead.h" />
+    <ClInclude Include="regular_event_player_dead.h" />
+    <ClInclude Include="regular_event_player_resurgence_req.h" />
+    <ClInclude Include="regular_event_spawn_end.h" />
+    <ClInclude Include="regular_event_start_time.h" />
+    <ClInclude Include="regular_event_timer.h" />
+    <ClInclude Include="regular_event_trigger.h" />
+    <ClInclude Include="regular_faction_pk.h" />
+    <ClInclude Include="regular_field_001.h" />
+    <ClInclude Include="regular_field_002.h" />
+    <ClInclude Include="regular_field_003.h" />
+    <ClInclude Include="regular_field_004.h" />
+    <ClInclude Include="regular_field_005.h" />
+    <ClInclude Include="regular_field_006.h" />
+    <ClInclude Include="regular_field_base.h" />
+    <ClInclude Include="regular_field_boss.h" />
+    <ClInclude Include="regular_first.h" />
+    <ClInclude Include="regular_guild.h" />
+    <ClInclude Include="regular_home.h" />
+    <ClInclude Include="regular_manager.h" />
+    <ClInclude Include="regular_maoxian_001.h" />
+    <ClInclude Include="regular_maoxian_002.h" />
+    <ClInclude Include="regular_maoxian_003.h" />
+    <ClInclude Include="regular_maoxian_004.h" />
+    <ClInclude Include="regular_maoxian_005.h" />
+    <ClInclude Include="regular_maoxian_006.h" />
+    <ClInclude Include="regular_maoxian_007.h" />
+    <ClInclude Include="regular_maoxian_008.h" />
+    <ClInclude Include="regular_maoxian_009.h" />
+    <ClInclude Include="regular_maoxian_010.h" />
+    <ClInclude Include="regular_maoxian_011.h" />
+    <ClInclude Include="regular_maoxian_012.h" />
+    <ClInclude Include="regular_maoxian_013.h" />
+    <ClInclude Include="regular_maoxian_014.h" />
+    <ClInclude Include="regular_maoxian_015.h" />
+    <ClInclude Include="regular_maoxian_016.h" />
+    <ClInclude Include="regular_maoxian_017.h" />
+    <ClInclude Include="regular_maoxian_018.h" />
+    <ClInclude Include="regular_maoxian_019.h" />
+    <ClInclude Include="regular_maoxian_020.h" />
+    <ClInclude Include="regular_maoxian_021.h" />
+    <ClInclude Include="regular_maoxian_022.h" />
+    <ClInclude Include="regular_maoxian_023.h" />
+    <ClInclude Include="regular_maoxian_024.h" />
+    <ClInclude Include="regular_maoxian_025.h" />
+    <ClInclude Include="regular_maoxian_026.h" />
+    <ClInclude Include="regular_maoxian_027.h" />
+    <ClInclude Include="regular_maoxian_028.h" />
+    <ClInclude Include="regular_maoxian_029.h" />
+    <ClInclude Include="regular_maoxian_030.h" />
+    <ClInclude Include="regular_maoxian_031.h" />
+    <ClInclude Include="regular_maoxian_032.h" />
+    <ClInclude Include="regular_maoxian_033.h" />
+    <ClInclude Include="regular_maoxian_034.h" />
+    <ClInclude Include="regular_maoxian_035.h" />
+    <ClInclude Include="regular_maoxian_036.h" />
+    <ClInclude Include="regular_maoxian_037.h" />
+    <ClInclude Include="regular_maoxian_038.h" />
+    <ClInclude Include="regular_maoxian_039.h" />
+    <ClInclude Include="regular_maoxian_040.h" />
+    <ClInclude Include="regular_maoxian_041.h" />
+    <ClInclude Include="regular_maoxian_042.h" />
+    <ClInclude Include="regular_maoxian_043.h" />
+    <ClInclude Include="regular_maoxian_044.h" />
+    <ClInclude Include="regular_maoxian_045.h" />
+    <ClInclude Include="regular_maoxian_046.h" />
+    <ClInclude Include="regular_maoxian_047.h" />
+    <ClInclude Include="regular_maoxian_048.h" />
+    <ClInclude Include="regular_maoxian_049.h" />
+    <ClInclude Include="regular_maoxian_050.h" />
+    <ClInclude Include="regular_maoxian_051.h" />
+    <ClInclude Include="regular_maoxian_052.h" />
+    <ClInclude Include="regular_maoxian_053.h" />
+    <ClInclude Include="regular_maoxian_054.h" />
+    <ClInclude Include="regular_maoxian_055.h" />
+    <ClInclude Include="regular_maoxian_056.h" />
+    <ClInclude Include="regular_maoxian_057.h" />
+    <ClInclude Include="regular_maoxian_058.h" />
+    <ClInclude Include="regular_maoxian_059.h" />
+    <ClInclude Include="regular_maoxian_060.h" />
+    <ClInclude Include="regular_maoxian_061.h" />
+    <ClInclude Include="regular_maoxian_062.h" />
+    <ClInclude Include="regular_maoxian_063.h" />
+    <ClInclude Include="regular_maoxian_064.h" />
+    <ClInclude Include="regular_maoxian_065.h" />
+    <ClInclude Include="regular_maoxian_066.h" />
+    <ClInclude Include="regular_maoxian_067.h" />
+    <ClInclude Include="regular_maoxian_068.h" />
+    <ClInclude Include="regular_maoxian_069.h" />
+    <ClInclude Include="regular_maoxian_070.h" />
+    <ClInclude Include="regular_maoxian_071.h" />
+    <ClInclude Include="regular_maoxian_072.h" />
+    <ClInclude Include="regular_maoxian_101.h" />
+    <ClInclude Include="regular_maoxian_102.h" />
+    <ClInclude Include="regular_maoxian_103.h" />
+    <ClInclude Include="regular_maoxian_104.h" />
+    <ClInclude Include="regular_maoxian_105.h" />
+    <ClInclude Include="regular_maoxian_106.h" />
+    <ClInclude Include="regular_maoxian_107.h" />
+    <ClInclude Include="regular_maoxian_108.h" />
+    <ClInclude Include="regular_maoxian_109.h" />
+    <ClInclude Include="regular_maoxian_110.h" />
+    <ClInclude Include="regular_maoxian_111.h" />
+    <ClInclude Include="regular_maoxian_112.h" />
+    <ClInclude Include="regular_maoxian_113.h" />
+    <ClInclude Include="regular_maoxian_114.h" />
+    <ClInclude Include="regular_maoxian_115.h" />
+    <ClInclude Include="regular_maoxian_116.h" />
+    <ClInclude Include="regular_maoxian_117.h" />
+    <ClInclude Include="regular_maoxian_118.h" />
+    <ClInclude Include="regular_maoxian_119.h" />
+    <ClInclude Include="regular_maoxian_120.h" />
+    <ClInclude Include="regular_maoxian_121.h" />
+    <ClInclude Include="regular_maoxian_122.h" />
+    <ClInclude Include="regular_maoxian_123.h" />
+    <ClInclude Include="regular_maoxian_124.h" />
+    <ClInclude Include="regular_maoxian_125.h" />
+    <ClInclude Include="regular_maoxian_126.h" />
+    <ClInclude Include="regular_maoxian_127.h" />
+    <ClInclude Include="regular_maoxian_128.h" />
+    <ClInclude Include="regular_maoxian_129.h" />
+    <ClInclude Include="regular_maoxian_130.h" />
+    <ClInclude Include="regular_maoxian_131.h" />
+    <ClInclude Include="regular_maoxian_132.h" />
+    <ClInclude Include="regular_maoxian_133.h" />
+    <ClInclude Include="regular_maoxian_134.h" />
+    <ClInclude Include="regular_maoxian_135.h" />
+    <ClInclude Include="regular_maoxian_136.h" />
+    <ClInclude Include="regular_maoxian_137.h" />
+    <ClInclude Include="regular_maoxian_138.h" />
+    <ClInclude Include="regular_maoxian_139.h" />
+    <ClInclude Include="regular_maoxian_140.h" />
+    <ClInclude Include="regular_maoxian_141.h" />
+    <ClInclude Include="regular_maoxian_142.h" />
+    <ClInclude Include="regular_maoxian_143.h" />
+    <ClInclude Include="regular_maoxian_144.h" />
+    <ClInclude Include="regular_maoxian_145.h" />
+    <ClInclude Include="regular_maoxian_146.h" />
+    <ClInclude Include="regular_maoxian_147.h" />
+    <ClInclude Include="regular_maoxian_148.h" />
+    <ClInclude Include="regular_maoxian_149.h" />
+    <ClInclude Include="regular_maoxian_150.h" />
+    <ClInclude Include="regular_maoxian_151.h" />
+    <ClInclude Include="regular_maoxian_152.h" />
+    <ClInclude Include="regular_maoxian_153.h" />
+    <ClInclude Include="regular_maoxian_154.h" />
+    <ClInclude Include="regular_maoxian_155.h" />
+    <ClInclude Include="regular_maoxian_156.h" />
+    <ClInclude Include="regular_maoxian_157.h" />
+    <ClInclude Include="regular_maoxian_158.h" />
+    <ClInclude Include="regular_maoxian_159.h" />
+    <ClInclude Include="regular_maoxian_160.h" />
+    <ClInclude Include="regular_maoxian_161.h" />
+    <ClInclude Include="regular_maoxian_162.h" />
+    <ClInclude Include="regular_maoxian_163.h" />
+    <ClInclude Include="regular_maoxian_164.h" />
+    <ClInclude Include="regular_maoxian_165.h" />
+    <ClInclude Include="regular_maoxian_166.h" />
+    <ClInclude Include="regular_maoxian_167.h" />
+    <ClInclude Include="regular_maoxian_168.h" />
+    <ClInclude Include="regular_maoxian_169.h" />
+    <ClInclude Include="regular_maoxian_170.h" />
+    <ClInclude Include="regular_maoxian_171.h" />
+    <ClInclude Include="regular_maoxian_172.h" />
+    <ClInclude Include="regular_maoxian_201.h" />
+    <ClInclude Include="regular_maoxian_202.h" />
+    <ClInclude Include="regular_maoxian_203.h" />
+    <ClInclude Include="regular_maoxian_204.h" />
+    <ClInclude Include="regular_maoxian_205.h" />
+    <ClInclude Include="regular_maoxian_206.h" />
+    <ClInclude Include="regular_maoxian_207.h" />
+    <ClInclude Include="regular_maoxian_208.h" />
+    <ClInclude Include="regular_maoxian_209.h" />
+    <ClInclude Include="regular_maoxian_210.h" />
+    <ClInclude Include="regular_maoxian_211.h" />
+    <ClInclude Include="regular_maoxian_212.h" />
+    <ClInclude Include="regular_maoxian_213.h" />
+    <ClInclude Include="regular_maoxian_214.h" />
+    <ClInclude Include="regular_maoxian_215.h" />
+    <ClInclude Include="regular_maoxian_216.h" />
+    <ClInclude Include="regular_maoxian_217.h" />
+    <ClInclude Include="regular_maoxian_218.h" />
+    <ClInclude Include="regular_maoxian_219.h" />
+    <ClInclude Include="regular_maoxian_220.h" />
+    <ClInclude Include="regular_maoxian_221.h" />
+    <ClInclude Include="regular_maoxian_222.h" />
+    <ClInclude Include="regular_maoxian_223.h" />
+    <ClInclude Include="regular_maoxian_224.h" />
+    <ClInclude Include="regular_maoxian_225.h" />
+    <ClInclude Include="regular_maoxian_226.h" />
+    <ClInclude Include="regular_maoxian_227.h" />
+    <ClInclude Include="regular_maoxian_228.h" />
+    <ClInclude Include="regular_maoxian_229.h" />
+    <ClInclude Include="regular_maoxian_230.h" />
+    <ClInclude Include="regular_maoxian_231.h" />
+    <ClInclude Include="regular_maoxian_232.h" />
+    <ClInclude Include="regular_maoxian_233.h" />
+    <ClInclude Include="regular_maoxian_234.h" />
+    <ClInclude Include="regular_maoxian_235.h" />
+    <ClInclude Include="regular_maoxian_236.h" />
+    <ClInclude Include="regular_maoxian_237.h" />
+    <ClInclude Include="regular_maoxian_238.h" />
+    <ClInclude Include="regular_maoxian_239.h" />
+    <ClInclude Include="regular_maoxian_240.h" />
+    <ClInclude Include="regular_maoxian_241.h" />
+    <ClInclude Include="regular_maoxian_242.h" />
+    <ClInclude Include="regular_maoxian_243.h" />
+    <ClInclude Include="regular_maoxian_244.h" />
+    <ClInclude Include="regular_maoxian_245.h" />
+    <ClInclude Include="regular_maoxian_246.h" />
+    <ClInclude Include="regular_maoxian_247.h" />
+    <ClInclude Include="regular_maoxian_248.h" />
+    <ClInclude Include="regular_maoxian_249.h" />
+    <ClInclude Include="regular_maoxian_250.h" />
+    <ClInclude Include="regular_maoxian_251.h" />
+    <ClInclude Include="regular_maoxian_252.h" />
+    <ClInclude Include="regular_maoxian_253.h" />
+    <ClInclude Include="regular_maoxian_254.h" />
+    <ClInclude Include="regular_maoxian_255.h" />
+    <ClInclude Include="regular_maoxian_256.h" />
+    <ClInclude Include="regular_maoxian_257.h" />
+    <ClInclude Include="regular_maoxian_258.h" />
+    <ClInclude Include="regular_maoxian_259.h" />
+    <ClInclude Include="regular_maoxian_260.h" />
+    <ClInclude Include="regular_maoxian_261.h" />
+    <ClInclude Include="regular_maoxian_262.h" />
+    <ClInclude Include="regular_maoxian_263.h" />
+    <ClInclude Include="regular_maoxian_264.h" />
+    <ClInclude Include="regular_maoxian_265.h" />
+    <ClInclude Include="regular_maoxian_266.h" />
+    <ClInclude Include="regular_maoxian_267.h" />
+    <ClInclude Include="regular_maoxian_268.h" />
+    <ClInclude Include="regular_maoxian_269.h" />
+    <ClInclude Include="regular_maoxian_270.h" />
+    <ClInclude Include="regular_maoxian_271.h" />
+    <ClInclude Include="regular_maoxian_272.h" />
+    <ClInclude Include="regular_maoxian_base.h" />
+    <ClInclude Include="regular_multiple.h" />
+    <ClInclude Include="regular_pvp.h" />
+    <ClInclude Include="regular_rog_dungeon.h" />
+    <ClInclude Include="regular_single.h" />
+    <ClInclude Include="regular_void_field.h" />
+    <ClInclude Include="regular_void_field_solo.h" />
+    <ClInclude Include="regular_world.h" />
+    <ClInclude Include="regular_world_boss.h" />
+    <ClInclude Include="regular_yijie_001.h" />
+    <ClInclude Include="regular_yijie_002.h" />
+    <ClInclude Include="regular_yijie_003.h" />
+    <ClInclude Include="regular_yijie_004.h" />
+    <ClInclude Include="regular_yijie_005.h" />
+    <ClInclude Include="regular_yijie_006.h" />
+    <ClInclude Include="regular_yijie_007.h" />
+    <ClInclude Include="regular_yijie_008.h" />
+    <ClInclude Include="regular_yijie_009.h" />
+    <ClInclude Include="regular_yijie_010.h" />
+    <ClInclude Include="regular_yijie_011.h" />
+    <ClInclude Include="regular_yijie_012.h" />
+    <ClInclude Include="regular_yijie_013.h" />
+    <ClInclude Include="regular_yijie_014.h" />
+    <ClInclude Include="regular_yijie_015.h" />
+    <ClInclude Include="regular_yijie_016.h" />
+    <ClInclude Include="regular_yijie_017.h" />
+    <ClInclude Include="regular_yijie_018.h" />
+    <ClInclude Include="regular_yijie_019.h" />
+    <ClInclude Include="regular_yijie_020.h" />
+    <ClInclude Include="regular_yijie_021.h" />
+    <ClInclude Include="regular_yijie_022.h" />
+    <ClInclude Include="regular_yijie_023.h" />
+    <ClInclude Include="regular_yijie_024.h" />
+    <ClInclude Include="regular_yijie_025.h" />
+    <ClInclude Include="regular_yijie_026.h" />
+    <ClInclude Include="regular_yijie_027.h" />
+    <ClInclude Include="regular_yijie_028.h" />
+    <ClInclude Include="regular_yijie_029.h" />
+    <ClInclude Include="regular_yijie_030.h" />
+    <ClInclude Include="regular_yijie_031.h" />
+    <ClInclude Include="regular_yijie_032.h" />
+    <ClInclude Include="regular_yijie_033.h" />
+    <ClInclude Include="regular_yijie_034.h" />
+    <ClInclude Include="regular_yijie_035.h" />
+    <ClInclude Include="regular_yijie_036.h" />
+    <ClInclude Include="regular_yijie_037.h" />
+    <ClInclude Include="regular_yijie_038.h" />
+    <ClInclude Include="regular_yijie_039.h" />
+    <ClInclude Include="regular_yijie_040.h" />
+    <ClInclude Include="regular_yijie_base.h" />
+    <ClInclude Include="reincarnated_data.h" />
+    <ClInclude Include="relife_helper.h" />
+    <ClInclude Include="remana_helper.h" />
+    <ClInclude Include="resurgence_helper.h" />
+    <ClInclude Include="ridetrain.h" />
+    <ClInclude Include="ride_config.h" />
+    <ClInclude Include="ride_manager.h" />
+    <ClInclude Include="rog_regular_event.h" />
+    <ClInclude Include="rog_regular_event_combo_kill.h" />
+    <ClInclude Include="rog_regular_event_damage_rank.h" />
+    <ClInclude Include="rog_regular_event_monster_clear.h" />
+    <ClInclude Include="rog_regular_event_monster_dead.h" />
+    <ClInclude Include="rog_regular_event_player_dead.h" />
+    <ClInclude Include="rog_regular_event_three_player.h" />
+    <ClInclude Include="rog_regular_event_timer.h" />
+    <ClInclude Include="rtti.h" />
+    <ClInclude Include="rune_config.h" />
+    <ClInclude Include="sale_config.h" />
+    <ClInclude Include="scene.h" />
+    <ClInclude Include="sceneobject.h" />
+    <ClInclude Include="scene_notifier.h" />
+    <ClInclude Include="scene_notifier_all.h" />
+    <ClInclude Include="scene_notifier_aoi.h" />
+    <ClInclude Include="script\lua\lapi.h" />
+    <ClInclude Include="script\lua\lauxlib.h" />
+    <ClInclude Include="script\lua\lcode.h" />
+    <ClInclude Include="script\lua\ldebug.h" />
+    <ClInclude Include="script\lua\ldo.h" />
+    <ClInclude Include="script\lua\lfunc.h" />
+    <ClInclude Include="script\lua\lgc.h" />
+    <ClInclude Include="script\lua\llex.h" />
+    <ClInclude Include="script\lua\llimits.h" />
+    <ClInclude Include="script\lua\lmem.h" />
+    <ClInclude Include="script\lua\lobject.h" />
+    <ClInclude Include="script\lua\lopcodes.h" />
+    <ClInclude Include="script\lua\lparser.h" />
+    <ClInclude Include="script\lua\lstate.h" />
+    <ClInclude Include="script\lua\lstring.h" />
+    <ClInclude Include="script\lua\ltable.h" />
+    <ClInclude Include="script\lua\ltm.h" />
+    <ClInclude Include="script\lua\lua.h" />
+    <ClInclude Include="script\lua\lua.hpp" />
+    <ClInclude Include="script\lua\luaconf.h" />
+    <ClInclude Include="script\lua\lualib.h" />
+    <ClInclude Include="script\lua\lundump.h" />
+    <ClInclude Include="script\lua\lvm.h" />
+    <ClInclude Include="script\lua\lzio.h" />
+    <ClInclude Include="script\tolua\tolua++.h" />
+    <ClInclude Include="script\tolua\tolua_event.h" />
+    <ClInclude Include="server_config.h" />
+    <ClInclude Include="setting_manager.h" />
+    <ClInclude Include="shop_manager.h" />
+    <ClInclude Include="shop_service_manager.h" />
+    <ClInclude Include="shorcut_config.h" />
+    <ClInclude Include="shorcut_manager.h" />
+    <ClInclude Include="sign_gain_config.h" />
+    <ClInclude Include="sign_makeup_config.h" />
+    <ClInclude Include="sign_manager.h" />
+    <ClInclude Include="singgle_answer_config.h" />
+    <ClInclude Include="single_answer_manager.h" />
+    <ClInclude Include="skill_bullet_trajectory_collision.h" />
+    <ClInclude Include="skill_bullet_trajectory_direct.h" />
+    <ClInclude Include="skill_config.h" />
+    <ClInclude Include="skill_config_manager.h" />
+    <ClInclude Include="skill_controller.h" />
+    <ClInclude Include="skill_data.h" />
+    <ClInclude Include="skill_data_parser.h" />
+    <ClInclude Include="skill_define.h" />
+    <ClInclude Include="skill_info.h" />
+    <ClInclude Include="skill_info_manager.h" />
+    <ClInclude Include="skill_levelup_config.h" />
+    <ClInclude Include="skill_logic_base.h" />
+    <ClInclude Include="skill_logic_bullet.h" />
+    <ClInclude Include="skill_logic_cast.h" />
+    <ClInclude Include="skill_logic_hit.h" />
+    <ClInclude Include="skill_logic_launch.h" />
+    <ClInclude Include="skill_logic_strike.h" />
+    <ClInclude Include="skill_manager.h" />
+    <ClInclude Include="skill_node_pool.h" />
+    <ClInclude Include="skill_object.h" />
+    <ClInclude Include="skill_strengthen_manager.h" />
+    <ClInclude Include="skill_utils.h" />
+    <ClInclude Include="soldier.h" />
+    <ClInclude Include="soldier_prop_notifier.h" />
+    <ClInclude Include="soldier_talent_manager.h" />
+    <ClInclude Include="soul_dungeon_manager.h" />
+    <ClInclude Include="spawn.h" />
+    <ClInclude Include="spawn_controller.h" />
+    <ClInclude Include="spawn_controller_factory.h" />
+    <ClInclude Include="spawn_controller_max_num.h" />
+    <ClInclude Include="spawn_controller_speed.h" />
+    <ClInclude Include="spawn_controller_trigger.h" />
+    <ClInclude Include="spawn_controller_wait_wave_dead.h" />
+    <ClInclude Include="spawn_controller_wave_delay.h" />
+    <ClInclude Include="spawn_wave.h" />
+    <ClInclude Include="special_activity_manager_gs.h" />
+    <ClInclude Include="state.h" />
+    <ClInclude Include="state_attack.h" />
+    <ClInclude Include="state_controller.h" />
+    <ClInclude Include="state_dance.h" />
+    <ClInclude Include="state_define.h" />
+    <ClInclude Include="state_die.h" />
+    <ClInclude Include="state_idle.h" />
+    <ClInclude Include="state_movie.h" />
+    <ClInclude Include="state_run.h" />
+    <ClInclude Include="state_singing.h" />
+    <ClInclude Include="state_stun.h" />
+    <ClInclude Include="state_touch.h" />
+    <ClInclude Include="state_walk.h" />
+    <ClInclude Include="step_mover.h" />
+    <ClInclude Include="stone_config.h" />
+    <ClInclude Include="stone_turn_gold_config.h" />
+    <ClInclude Include="stone_turn_gold_manager.h" />
+    <ClInclude Include="store_manager.h" />
+    <ClInclude Include="sub_regular.h" />
+    <ClInclude Include="sub_regular_boss.h" />
+    <ClInclude Include="sub_regular_hook.h" />
+    <ClInclude Include="sub_regular_monster.h" />
+    <ClInclude Include="sword_config.h" />
+    <ClInclude Include="sword_manager.h" />
+    <ClInclude Include="synthetize_config.h" />
+    <ClInclude Include="system_config_manager.h" />
+    <ClInclude Include="system_setting_config.h" />
+    <ClInclude Include="task_config_manager.h" />
+    <ClInclude Include="task_data.h" />
+    <ClInclude Include="task_data_achive.h" />
+    <ClInclude Include="task_data_branch.h" />
+    <ClInclude Include="task_data_crusade.h" />
+    <ClInclude Include="task_data_daily.h" />
+    <ClInclude Include="task_data_factory.h" />
+    <ClInclude Include="task_data_festive.h" />
+    <ClInclude Include="task_data_game.h" />
+    <ClInclude Include="task_data_guard.h" />
+    <ClInclude Include="task_data_guild.h" />
+    <ClInclude Include="task_data_main.h" />
+    <ClInclude Include="task_data_target.h" />
+    <ClInclude Include="task_define.h" />
+    <ClInclude Include="task_event_define.h" />
+    <ClInclude Include="task_festive_config.h" />
+    <ClInclude Include="task_festive_manager.h" />
+    <ClInclude Include="task_game_config.h" />
+    <ClInclude Include="task_game_config_data.h" />
+    <ClInclude Include="task_game_manager.h" />
+    <ClInclude Include="task_manager.h" />
+    <ClInclude Include="task_manage_agent.h" />
+    <ClInclude Include="task_target.h" />
+    <ClInclude Include="td_channel_manager.h" />
+    <ClInclude Include="td_config.h" />
+    <ClInclude Include="team_channel_manager.h" />
+    <ClInclude Include="team_dungeon_config.h" />
+    <ClInclude Include="team_manager.h" />
+    <ClInclude Include="team_relationinfo.h" />
+    <ClInclude Include="team_relationship.h" />
+    <ClInclude Include="timing_trigger_manager.h" />
+    <ClInclude Include="title_config.h" />
+    <ClInclude Include="title_manager.h" />
+    <ClInclude Include="top_up_rank_manager.h" />
+    <ClInclude Include="touch.h" />
+    <ClInclude Include="touch_controller.h" />
+    <ClInclude Include="tower_defence_config.h" />
+    <ClInclude Include="tower_defence_manager.h" />
+    <ClInclude Include="trade_manager.h" />
+    <ClInclude Include="treasury_config.h" />
+    <ClInclude Include="treasury_manager.h" />
+    <ClInclude Include="trigger.h" />
+    <ClInclude Include="trigger_config.h" />
+    <ClInclude Include="twilight_war_channel_manager.h" />
+    <ClInclude Include="twilight_war_communicator.h" />
+    <ClInclude Include="twilight_war_manager.h" />
+    <ClInclude Include="vigor_config.h" />
+    <ClInclude Include="vigor_manager.h" />
+    <ClInclude Include="vip_card_config.h" />
+    <ClInclude Include="vip_gift_config.h" />
+    <ClInclude Include="vip_manager.h" />
+    <ClInclude Include="vip_only_dungeon_config.h" />
+    <ClInclude Include="vip_only_dungeon_manager.h" />
+    <ClInclude Include="vip_reward_config.h" />
+    <ClInclude Include="vip_statistics_manager.h" />
+    <ClInclude Include="void_field_config.h" />
+    <ClInclude Include="void_field_manager.h" />
+    <ClInclude Include="void_field_setting_config.h" />
+    <ClInclude Include="void_field_solo_config.h" />
+    <ClInclude Include="void_field_solo_manager.h" />
+    <ClInclude Include="welcome_reward_config.h" />
+    <ClInclude Include="wing_attr_config.h" />
+    <ClInclude Include="wing_attr_config_manager.h" />
+    <ClInclude Include="wing_manager.h" />
+    <ClInclude Include="world_boss_channel_manager.h" />
+    <ClInclude Include="world_boss_config.h" />
+    <ClInclude Include="world_boss_manager.h" />
+    <ClInclude Include="world_map_channel_manager.h" />
+    <ClInclude Include="world_map_config.h" />
+    <ClInclude Include="world_map_helper.h" />
+    <ClInclude Include="world_map_manager.h" />
+    <ClInclude Include="world_prop_communicator.h" />
+    <ClInclude Include="zombie_config.h" />
+    <ClInclude Include="zombie_manager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lua_interface.pkg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\box2d\box2d.vcxproj">
+      <Project>{106d0bd5-5339-48c0-a10c-4ead7877b92c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\collision\collision.vcxproj">
+      <Project>{e927fa1a-f2a4-4edc-a514-291abff97edc}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\commonlib\commonlib.vcxproj">
+      <Project>{847599e4-d51e-4339-81c2-cf1f84b0485c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\formula_cal\formula_cal.vcxproj">
+      <Project>{aafde931-1d40-4c0e-b04b-eaefb07fab3a}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\grid_world\grid_world.vcxproj">
+      <Project>{d2aa6e8b-7b2d-49d5-acf7-78ee1bfcfd80}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\navmesh\navmesh.vcxproj">
+      <Project>{90fc8de2-794c-4e8f-9923-d204767d6ffe}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\transfer\Transfer.vcxproj">
+      <Project>{afac911b-ab7f-4c1a-97a3-b02c5dd8fc9c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

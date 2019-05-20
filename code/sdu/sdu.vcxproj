@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{641C5D2A-7104-4A7E-9BC2-7133CF4DE11B}</ProjectGuid>
+    <RootNamespace>sdu</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\lib\$(Configuration)\</OutDir>
+    <IntDir>..\tmp\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\lib\$(Configuration)\</OutDir>
+    <IntDir>..\tmp\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>SDuPCH.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ShowIncludes>false</ShowIncludes>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>./include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Assertion.h" />
+    <ClInclude Include="buildconfig.h" />
+    <ClInclude Include="buildinclude.h" />
+    <ClInclude Include="colorlog.h" />
+    <ClInclude Include="getopt.h" />
+    <ClInclude Include="httputils.h" />
+    <ClInclude Include="IterationUtils.h" />
+    <ClInclude Include="LambdaNew.h" />
+    <ClInclude Include="Logging.h" />
+    <ClInclude Include="math2d.h" />
+    <ClInclude Include="NiQuickProf.h" />
+    <ClInclude Include="Print.h" />
+    <ClInclude Include="ScopedPointerContainers.h" />
+    <ClInclude Include="sdatomic.h" />
+    <ClInclude Include="sdbase.h" />
+    <ClInclude Include="sdbignum.h" />
+    <ClInclude Include="sdbignummul.h" />
+    <ClInclude Include="sdbit.h" />
+    <ClInclude Include="sdcondition.h" />
+    <ClInclude Include="sdconfig.h" />
+    <ClInclude Include="sdconfigure.h" />
+    <ClInclude Include="sdcontainers.h" />
+    <ClInclude Include="sdcrc.h" />
+    <ClInclude Include="sdcryptodes.h" />
+    <ClInclude Include="sdcryptorsa.h" />
+    <ClInclude Include="sdcsvfile.h" />
+    <ClInclude Include="sddataqueue.h" />
+    <ClInclude Include="sddatastream.h" />
+    <ClInclude Include="sddes.h" />
+    <ClInclude Include="sddir.h" />
+    <ClInclude Include="sderrno.h" />
+    <ClInclude Include="sdexternalmemallocator.h" />
+    <ClInclude Include="sdfifo.h" />
+    <ClInclude Include="sdfifodqueue.h" />
+    <ClInclude Include="sdfifoqueue.h" />
+    <ClInclude Include="sdfile.h" />
+    <ClInclude Include="sdfilemapping.h" />
+    <ClInclude Include="sdhashmap.h" />
+    <ClInclude Include="sdidpool.h" />
+    <ClInclude Include="sdindexer.h" />
+    <ClInclude Include="sdindexer_impl.h" />
+    <ClInclude Include="sdiniconfigure.h" />
+    <ClInclude Include="sdlimit.h" />
+    <ClInclude Include="sdlock.h" />
+    <ClInclude Include="sdlog.h" />
+    <ClInclude Include="sdloopbuffer.h" />
+    <ClInclude Include="sdmacros.h" />
+    <ClInclude Include="sdmapconfigure.h" />
+    <ClInclude Include="sdmath.h" />
+    <ClInclude Include="sdmd5.h" />
+    <ClInclude Include="sdmemallocator.h" />
+    <ClInclude Include="sdmemallocatormgr.h" />
+    <ClInclude Include="sdmemdefines.h" />
+    <ClInclude Include="sdmemobj.h" />
+    <ClInclude Include="sdmemobjectallocator.h" />
+    <ClInclude Include="sdmemobjectpool.h" />
+    <ClInclude Include="sdmemorypool.h" />
+    <ClInclude Include="sdmutex.h" />
+    <ClInclude Include="sdnamedsemaphore.h" />
+    <ClInclude Include="sdnetutils.h" />
+    <ClInclude Include="sdnet_ver.h" />
+    <ClInclude Include="sdobjectfifo.h" />
+    <ClInclude Include="sdobjectpool.h" />
+    <ClInclude Include="sdobject_allocator.h" />
+    <ClInclude Include="sdobject_allocator_ex.h" />
+    <ClInclude Include="sdobject_dqueue_allocator.h" />
+    <ClInclude Include="sdpoint.h" />
+    <ClInclude Include="sdpool_allocator.h" />
+    <ClInclude Include="sdprocess.h" />
+    <ClInclude Include="sdrandom.h" />
+    <ClInclude Include="sdregex.h" />
+    <ClInclude Include="sdrsa.h" />
+    <ClInclude Include="sdrsa2.h" />
+    <ClInclude Include="sdrsahlp.h" />
+    <ClInclude Include="sdserverid.h" />
+    <ClInclude Include="sdshmem.h" />
+    <ClInclude Include="sdsingleton.h" />
+    <ClInclude Include="sdstackwalker.h" />
+    <ClInclude Include="sdstrencrypt.h" />
+    <ClInclude Include="sdstring.h" />
+    <ClInclude Include="sdthread.h" />
+    <ClInclude Include="sdthreadpool.h" />
+    <ClInclude Include="sdtime.h" />
+    <ClInclude Include="sdtimer.h" />
+    <ClInclude Include="sdtimer_detail.h" />
+    <ClInclude Include="sdtimer_impl.h" />
+    <ClInclude Include="sdtranslate.h" />
+    <ClInclude Include="sdtype.h" />
+    <ClInclude Include="sdu.h" />
+    <ClInclude Include="SDuPCH.h" />
+    <ClInclude Include="sdutf8.h" />
+    <ClInclude Include="sdutil.h" />
+    <ClInclude Include="sdxmlconfigure.h" />
+    <ClInclude Include="SignalConnectionContainer.h" />
+    <ClInclude Include="StackWalker.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="colorlog.cpp" />
+    <ClCompile Include="getopt.cpp" />
+    <ClCompile Include="httputils.cpp" />
+    <ClCompile Include="Logging.cpp" />
+    <ClCompile Include="NiQuickProf.cpp" />
+    <ClCompile Include="sdatomic.cpp" />
+    <ClCompile Include="sdbignum.cpp" />
+    <ClCompile Include="sdbit.cpp" />
+    <ClCompile Include="sdcondition.cpp" />
+    <ClCompile Include="sdcrc.cpp" />
+    <ClCompile Include="sdcryptodes.cpp" />
+    <ClCompile Include="sdcryptorsa.cpp" />
+    <ClCompile Include="sdcsvfile.cpp" />
+    <ClCompile Include="sddataqueue.cpp" />
+    <ClCompile Include="sddatastream.cpp" />
+    <ClCompile Include="sddes.cpp" />
+    <ClCompile Include="sddir.cpp" />
+    <ClCompile Include="sdfile.cpp" />
+    <ClCompile Include="sdfilemapping.cpp" />
+    <ClCompile Include="sdiniconfigure.cpp" />
+    <ClCompile Include="sdlog.cpp" />
+    <ClCompile Include="sdloopbuffer.cpp" />
+    <ClCompile Include="sdmd5.cpp" />
+    <ClCompile Include="sdmemallocatormgr.cpp" />
+    <ClCompile Include="sdmemobj.cpp" />
+    <ClCompile Include="sdmemorypool.cpp" />
+    <ClCompile Include="sdmutex.cpp" />
+    <ClCompile Include="sdnamedsemaphore.cpp" />
+    <ClCompile Include="sdnetutils.cpp" />
+    <ClCompile Include="sdprocess.cpp" />
+    <ClCompile Include="sdrandom.cpp" />
+    <ClCompile Include="sdregex.cpp" />
+    <ClCompile Include="sdrsa.cpp" />
+    <ClCompile Include="sdrsa2.cpp" />
+    <ClCompile Include="sdrsahlp.cpp" />
+    <ClCompile Include="sdserverid.cpp" />
+    <ClCompile Include="sdshmem.cpp" />
+    <ClCompile Include="sdstackwalker.cpp" />
+    <ClCompile Include="sdstrencrypt.cpp" />
+    <ClCompile Include="sdstring.cpp" />
+    <ClCompile Include="sdthread.cpp" />
+    <ClCompile Include="sdthreadpool.cpp" />
+    <ClCompile Include="sdtime.cpp" />
+    <ClCompile Include="sdtimer.cpp" />
+    <ClCompile Include="sdtimer_detail.cpp" />
+    <ClCompile Include="sdtimer_impl.cpp" />
+    <ClCompile Include="sdtranslate.cpp" />
+    <ClCompile Include="SDuPCH.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="sdutf8.cpp" />
+    <ClCompile Include="sdxmlconfigure.cpp" />
+    <ClCompile Include="StackWalker.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sdexternalmemallocator.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

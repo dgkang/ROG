@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{629A07CF-EF39-40E8-A17B-FF71D607B229}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\lib\$(Configuration)\</OutDir>
+    <IntDir>..\tmp\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\lib\$(Configuration)\</OutDir>
+    <IntDir>..\tmp\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\123\src\..\..\..\utils\trunk\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <DllDataFileName />
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>../sdu;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USE_MATH_DEFINES;_REENTRANT;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>net_manager_pch.h</PrecompiledHeaderFile>
+      <AssemblerListingLocation>Debug</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc90.pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_REENTRANT;MAX_PACKET_LENGTH=10000;MAX_NET_EVENT_COUNT=1024000;MAX_NET_SEND_TASK_COUNT=1024000;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\123\src\..\..\..\utils\trunk\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\123\src\..\..\..\utils\trunk\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <DllDataFileName />
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>../sdu;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USE_MATH_DEFINES;_REENTRANT;MAX_NET_EVENT_COUNT=1024000;MAX_NET_SEND_TASK_COUNT=1024000;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AssemblerListingLocation>Release</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc90.pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_REENTRANT;MAX_PACKET_LENGTH=10000;MAX_NET_EVENT_COUNT=1024000;MAX_NET_SEND_TASK_COUNT=1024000;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\123\src\..\..\..\utils\trunk\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="afpacket_splitter.cpp" />
+    <ClCompile Include="binary_splitter.cpp" />
+    <ClCompile Include="binary_stream.cpp" />
+    <ClCompile Include="epoll_reactor.cpp" />
+    <ClCompile Include="event_handler.cpp" />
+    <ClCompile Include="hex_string.cpp" />
+    <ClCompile Include="id_manager.cpp" />
+    <ClCompile Include="inet_addr.cpp" />
+    <ClCompile Include="line_splitter.cpp" />
+    <ClCompile Include="log.cpp" />
+    <ClCompile Include="net_event.cpp" />
+    <ClCompile Include="net_manager.cpp" />
+    <ClCompile Include="net_manager_pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="net_packet.cpp" />
+    <ClCompile Include="net_thread.cpp" />
+    <ClCompile Include="packet_splitter.cpp" />
+    <ClCompile Include="reactor.cpp" />
+    <ClCompile Include="select_reactor.cpp" />
+    <ClCompile Include="send_task.cpp" />
+    <ClCompile Include="sock_acceptor.cpp" />
+    <ClCompile Include="sock_connector.cpp" />
+    <ClCompile Include="sock_dgram.cpp" />
+    <ClCompile Include="sock_stream.cpp" />
+    <ClCompile Include="stream_types.cpp" />
+    <ClCompile Include="string_splitter.cpp" />
+    <ClCompile Include="task_base.cpp" />
+    <ClCompile Include="thread_mutex.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="afpacket_splitter.h" />
+    <ClInclude Include="binary_splitter.h" />
+    <ClInclude Include="binary_stream.h" />
+    <ClInclude Include="block_buffer.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="cycle_buffer.h" />
+    <ClInclude Include="epoll_reactor.h" />
+    <ClInclude Include="event_handler.h" />
+    <ClInclude Include="hex_string.h" />
+    <ClInclude Include="id_manager.h" />
+    <ClInclude Include="inet_addr.h" />
+    <ClInclude Include="int_types.h" />
+    <ClInclude Include="line_splitter.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="log.h" />
+    <ClInclude Include="net_event.h" />
+    <ClInclude Include="net_event_queue.h" />
+    <ClInclude Include="net_manager.h" />
+    <ClInclude Include="net_manager_pch.h" />
+    <ClInclude Include="net_packet.h" />
+    <ClInclude Include="net_thread.h" />
+    <ClInclude Include="os.h" />
+    <ClInclude Include="packet_splitter.h" />
+    <ClInclude Include="pool_allocator.h" />
+    <ClInclude Include="reactor.h" />
+    <ClInclude Include="select_reactor.h" />
+    <ClInclude Include="send_task.h" />
+    <ClInclude Include="send_task_queue.h" />
+    <ClInclude Include="sock_acceptor.h" />
+    <ClInclude Include="sock_connector.h" />
+    <ClInclude Include="sock_dgram.h" />
+    <ClInclude Include="sock_stream.h" />
+    <ClInclude Include="splitter_factory.h" />
+    <ClInclude Include="stream_types.h" />
+    <ClInclude Include="string_splitter.h" />
+    <ClInclude Include="task_base.h" />
+    <ClInclude Include="thread_mutex.h" />
+    <ClInclude Include="types.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="binary_stream.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

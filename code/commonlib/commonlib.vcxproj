@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{847599E4-D51E-4339-81C2-CF1F84B0485C}</ProjectGuid>
+    <RootNamespace>commonlib</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\lib\$(Configuration)\</OutDir>
+    <IntDir>..\tmp\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\lib\$(Configuration)\</OutDir>
+    <IntDir>..\tmp\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../sdu;../transfer;../dependence/mysql/include;../tinyxml;../pcre;../jsoncpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_USE_MATH_DEFINES;PCRE_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>commonlib_pch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>jsoncpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>../sdu;../transfer;../dependence/mysql/include;../tinyxml;../pcre;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="activity_config.cpp" />
+    <ClCompile Include="activity_reward_config.cpp" />
+    <ClCompile Include="backtrace.cpp" />
+    <ClCompile Include="base64_encode.cpp" />
+    <ClCompile Include="buy_cheap_config.cpp" />
+    <ClCompile Include="commonlib_pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="common_reward_config.cpp" />
+    <ClCompile Include="common_util.cpp" />
+    <ClCompile Include="config_reader.cpp" />
+    <ClCompile Include="daily_fashion_config.cpp" />
+    <ClCompile Include="dbdriver.cpp" />
+    <ClCompile Include="error_reporter.cpp" />
+    <ClCompile Include="guild_config.cpp" />
+    <ClCompile Include="guild_science_config.cpp" />
+    <ClCompile Include="json_helper.cpp" />
+    <ClCompile Include="log_writer.cpp" />
+    <ClCompile Include="mail_title_config.cpp" />
+    <ClCompile Include="mall_config.cpp" />
+    <ClCompile Include="mall_config_manager.cpp" />
+    <ClCompile Include="md5.cpp" />
+    <ClCompile Include="namelimit.cpp" />
+    <ClCompile Include="property.cpp" />
+    <ClCompile Include="service_config.cpp" />
+    <ClCompile Include="signal_catcher.cpp" />
+    <ClCompile Include="signal_try_catcher.cpp" />
+    <ClCompile Include="special_activity_config.cpp" />
+    <ClCompile Include="string_parser.cpp" />
+    <ClCompile Include="url_parser.cpp" />
+    <ClCompile Include="vip_config.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="activity_config.h" />
+    <ClInclude Include="activity_reward_config.h" />
+    <ClInclude Include="backtrace.h" />
+    <ClInclude Include="base64_encode.h" />
+    <ClInclude Include="buy_cheap_config.h" />
+    <ClInclude Include="commonlib.h" />
+    <ClInclude Include="commonlib_pch.h" />
+    <ClInclude Include="common_define.h" />
+    <ClInclude Include="common_reward_config.h" />
+    <ClInclude Include="common_util.h" />
+    <ClInclude Include="config_reader.h" />
+    <ClInclude Include="daily_fashion_config.h" />
+    <ClInclude Include="dbdriver.h" />
+    <ClInclude Include="dungeon_type.h" />
+    <ClInclude Include="engine_define.h" />
+    <ClInclude Include="error_reporter.h" />
+    <ClInclude Include="guild_config.h" />
+    <ClInclude Include="guild_define.h" />
+    <ClInclude Include="guild_science_config.h" />
+    <ClInclude Include="json_helper.h" />
+    <ClInclude Include="log_define.h" />
+    <ClInclude Include="log_writer.h" />
+    <ClInclude Include="mail_title_config.h" />
+    <ClInclude Include="mall_config.h" />
+    <ClInclude Include="mall_config_manager.h" />
+    <ClInclude Include="md5.h" />
+    <ClInclude Include="namelimit.h" />
+    <ClInclude Include="property.h" />
+    <ClInclude Include="service_config.h" />
+    <ClInclude Include="signal_catcher.h" />
+    <ClInclude Include="signal_try_catcher.h" />
+    <ClInclude Include="special_activity_config.h" />
+    <ClInclude Include="string_parser.h" />
+    <ClInclude Include="url_parser.h" />
+    <ClInclude Include="vip_config.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\jsoncpp\jsoncpp.vcxproj">
+      <Project>{b84f7231-16ce-41d8-8c08-7b523ff4225b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\pcre\pcre.vcxproj">
+      <Project>{c2c76108-38ab-4029-8b53-c4385c4e53f0}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\tinyxml\tinyxml.vcxproj">
+      <Project>{c3a3f18c-0254-4ff7-8890-3c2422da7957}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

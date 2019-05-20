@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CAFDE931-1D40-4C0E-B04B-EAEFB07FAB3F}</ProjectGuid>
+    <RootNamespace>CenterServer</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\bin\</OutDir>
+    <IntDir>..\tmp\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\bin\</OutDir>
+    <IntDir>..\tmp\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../sdu;../net_manager;../transfer;../commonlib;../dependence/mysql/include;../dependence/curl/include;../dependence/libevent/include;../tinyxml;../jsoncpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>centerserver_pch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Ws2_32.lib;sdu.lib;tinyxml.lib;jsoncpp.lib;libmysql.lib;libcurl_imp.lib;net_manager.lib;transfer.lib;libevent.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>..\lib\$(Configuration);..\dependence\mysql\lib\win;..\dependence\curl\lib\win;..\dependence\libevent\lib\win;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>../transfer;../sdu;../sdnet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Ws2_32.lib;sdu.lib;sdnet.lib;transfer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="360_login.cpp" />
+    <ClCompile Include="9377_login.cpp" />
+    <ClCompile Include="activecode_job.cpp" />
+    <ClCompile Include="activecode_manager.cpp" />
+    <ClCompile Include="activity_job.cpp" />
+    <ClCompile Include="activity_manager.cpp" />
+    <ClCompile Include="adventure_manager.cpp" />
+    <ClCompile Include="announce_manager.cpp" />
+    <ClCompile Include="answer_question_manager.cpp" />
+    <ClCompile Include="centerserver.cpp" />
+    <ClCompile Include="centerserver_pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="channel_manager.cpp" />
+    <ClCompile Include="chat_manager.cpp" />
+    <ClCompile Include="city_fight_manager_gc.cpp" />
+    <ClCompile Include="city_survival_manager_gc.cpp" />
+    <ClCompile Include="config_loader.cpp" />
+    <ClCompile Include="content_dictionary_job.cpp" />
+    <ClCompile Include="cross_team_manager.cpp" />
+    <ClCompile Include="daily_fashion_manager.cpp" />
+    <ClCompile Include="dbupdater.cpp" />
+    <ClCompile Include="dbupdater_global.cpp" />
+    <ClCompile Include="dg_login.cpp" />
+    <ClCompile Include="donate_manager.cpp" />
+    <ClCompile Include="dongyi_log.cpp" />
+    <ClCompile Include="dungeon_job.cpp" />
+    <ClCompile Include="dungeon_manager.cpp" />
+    <ClCompile Include="dungeon_score_manager.cpp" />
+    <ClCompile Include="festival_job.cpp" />
+    <ClCompile Include="festival_manager.cpp" />
+    <ClCompile Include="field_boss_manager.cpp" />
+    <ClCompile Include="game_common_setting.cpp" />
+    <ClCompile Include="game_handler.cpp" />
+    <ClCompile Include="game_setting_job.cpp" />
+    <ClCompile Include="game_setting_manager.cpp" />
+    <ClCompile Include="gate_handler.cpp" />
+    <ClCompile Include="global_db_operation.cpp" />
+    <ClCompile Include="global_setting_job.cpp" />
+    <ClCompile Include="global_setting_manager.cpp" />
+    <ClCompile Include="gmt_event.cpp" />
+    <ClCompile Include="gmt_executor.cpp" />
+    <ClCompile Include="gmt_http_async.cpp" />
+    <ClCompile Include="gm_config.cpp" />
+    <ClCompile Include="guild_job.cpp" />
+    <ClCompile Include="guild_manager.cpp" />
+    <ClCompile Include="guild_science_manager.cpp" />
+    <ClCompile Include="kugou_login.cpp" />
+    <ClCompile Include="kunlun_log.cpp" />
+    <ClCompile Include="kunlun_login.cpp" />
+    <ClCompile Include="kunlun_pay.cpp" />
+    <ClCompile Include="kunlun_pay_event.cpp" />
+    <ClCompile Include="kunlun_pay_http_async.cpp" />
+    <ClCompile Include="limit_sell_manager.cpp" />
+    <ClCompile Include="mail_job.cpp" />
+    <ClCompile Include="mail_manager.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mall_job.cpp" />
+    <ClCompile Include="mall_manager.cpp" />
+    <ClCompile Include="multiserver_battle_manager.cpp" />
+    <ClCompile Include="multserver_config.cpp" />
+    <ClCompile Include="offline_event_job.cpp" />
+    <ClCompile Include="offline_event_manager.cpp" />
+    <ClCompile Include="offline_player_job.cpp" />
+    <ClCompile Include="pay_job.cpp" />
+    <ClCompile Include="pay_manager.cpp" />
+    <ClCompile Include="platform_360_callbacker.cpp" />
+    <ClCompile Include="platform_callbacker.cpp" />
+    <ClCompile Include="platform_kugou_callbacker.cpp" />
+    <ClCompile Include="platform_tw_callbacker.cpp" />
+    <ClCompile Include="player.cpp" />
+    <ClCompile Include="player_config.cpp" />
+    <ClCompile Include="player_info_job.cpp" />
+    <ClCompile Include="player_info_parser.cpp" />
+    <ClCompile Include="player_job.cpp" />
+    <ClCompile Include="player_load_job.cpp" />
+    <ClCompile Include="player_load_parser.cpp" />
+    <ClCompile Include="player_manager.cpp" />
+    <ClCompile Include="player_net_handler.cpp" />
+    <ClCompile Include="player_save_job.cpp" />
+    <ClCompile Include="proclamation_manager.cpp" />
+    <ClCompile Include="pusher_360.cpp" />
+    <ClCompile Include="pusher_360_async.cpp" />
+    <ClCompile Include="random_package_manager.cpp" />
+    <ClCompile Include="ranking_list_manager.cpp" />
+    <ClCompile Include="ranking_loader_job.cpp" />
+    <ClCompile Include="ranking_manager.cpp" />
+    <ClCompile Include="ranking_save_job.cpp" />
+    <ClCompile Include="rank_query.cpp" />
+    <ClCompile Include="season_manager.cpp" />
+    <ClCompile Include="server_info_handler.cpp" />
+    <ClCompile Include="server_monitor.cpp" />
+    <ClCompile Include="special_activity_job.cpp" />
+    <ClCompile Include="special_activity_manager_gc.cpp" />
+    <ClCompile Include="team_manager.cpp" />
+    <ClCompile Include="timing_trigger_manager.cpp" />
+    <ClCompile Include="top_up_rank_job.cpp" />
+    <ClCompile Include="top_up_rank_query.cpp" />
+    <ClCompile Include="trade_job.cpp" />
+    <ClCompile Include="trade_manager.cpp" />
+    <ClCompile Include="tw_executor.cpp" />
+    <ClCompile Include="tw_http_async.cpp" />
+    <ClCompile Include="vip_statistics_manager.cpp" />
+    <ClCompile Include="void_field_manager.cpp" />
+    <ClCompile Include="void_field_solo_manager.cpp" />
+    <ClCompile Include="world_boss_job.cpp" />
+    <ClCompile Include="world_boss_manager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="360_login.h" />
+    <ClInclude Include="9377_login.h" />
+    <ClInclude Include="activecode_job.h" />
+    <ClInclude Include="activecode_manager.h" />
+    <ClInclude Include="activity_job.h" />
+    <ClInclude Include="activity_manager.h" />
+    <ClInclude Include="adventure_manager.h" />
+    <ClInclude Include="announce_manager.h" />
+    <ClInclude Include="answer_question_manager.h" />
+    <ClInclude Include="centerserver.h" />
+    <ClInclude Include="centerserver_pch.h" />
+    <ClInclude Include="channel_manager.h" />
+    <ClInclude Include="chat_manager.h" />
+    <ClInclude Include="city_fight_manager_gc.h" />
+    <ClInclude Include="city_survival_manager_gc.h" />
+    <ClInclude Include="config_loader.h" />
+    <ClInclude Include="content_dictionary_job.h" />
+    <ClInclude Include="cross_team_manager.h" />
+    <ClInclude Include="daily_fashion_manager.h" />
+    <ClInclude Include="dbjob.h" />
+    <ClInclude Include="dbupdater.h" />
+    <ClInclude Include="dbupdater_global.h" />
+    <ClInclude Include="dg_login.h" />
+    <ClInclude Include="donate_manager.h" />
+    <ClInclude Include="dongyi_log.h" />
+    <ClInclude Include="dungeon_job.h" />
+    <ClInclude Include="dungeon_manager.h" />
+    <ClInclude Include="dungeon_score_manager.h" />
+    <ClInclude Include="festival_job.h" />
+    <ClInclude Include="festival_manager.h" />
+    <ClInclude Include="field_boss_manager.h" />
+    <ClInclude Include="game_common_setting.h" />
+    <ClInclude Include="game_handler.h" />
+    <ClInclude Include="game_setting_job.h" />
+    <ClInclude Include="game_setting_manager.h" />
+    <ClInclude Include="gate_handler.h" />
+    <ClInclude Include="global_db_operation.h" />
+    <ClInclude Include="global_setting_job.h" />
+    <ClInclude Include="global_setting_manager.h" />
+    <ClInclude Include="gmt_event.h" />
+    <ClInclude Include="gmt_executor.h" />
+    <ClInclude Include="gmt_http_async.h" />
+    <ClInclude Include="gm_config.h" />
+    <ClInclude Include="guild_job.h" />
+    <ClInclude Include="guild_manager.h" />
+    <ClInclude Include="guild_science_manager.h" />
+    <ClInclude Include="kugou_login.h" />
+    <ClInclude Include="kunlun_log.h" />
+    <ClInclude Include="kunlun_login.h" />
+    <ClInclude Include="kunlun_pay.h" />
+    <ClInclude Include="kunlun_pay_event.h" />
+    <ClInclude Include="kunlun_pay_http_async.h" />
+    <ClInclude Include="limit_sell_manager.h" />
+    <ClInclude Include="mail_job.h" />
+    <ClInclude Include="mail_manager.h" />
+    <ClInclude Include="mall_job.h" />
+    <ClInclude Include="mall_manager.h" />
+    <ClInclude Include="multiserver_battle_manager.h" />
+    <ClInclude Include="multserver_config.h" />
+    <ClInclude Include="offline_event_job.h" />
+    <ClInclude Include="offline_event_manager.h" />
+    <ClInclude Include="offline_player_job.h" />
+    <ClInclude Include="pay_job.h" />
+    <ClInclude Include="pay_manager.h" />
+    <ClInclude Include="platform_360_callbacker.h" />
+    <ClInclude Include="platform_callbacker.h" />
+    <ClInclude Include="platform_kugou_callbacker.h" />
+    <ClInclude Include="platform_tw_callbacker.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="player_config.h" />
+    <ClInclude Include="player_info_job.h" />
+    <ClInclude Include="player_info_parser.h" />
+    <ClInclude Include="player_job.h" />
+    <ClInclude Include="player_load_job.h" />
+    <ClInclude Include="player_load_parser.h" />
+    <ClInclude Include="player_manager.h" />
+    <ClInclude Include="player_net_handler.h" />
+    <ClInclude Include="player_save_job.h" />
+    <ClInclude Include="proclamation_manager.h" />
+    <ClInclude Include="pusher_360.h" />
+    <ClInclude Include="pusher_360_async.h" />
+    <ClInclude Include="random_package_manager.h" />
+    <ClInclude Include="ranking_list_manager.h" />
+    <ClInclude Include="ranking_loader_job.h" />
+    <ClInclude Include="ranking_manager.h" />
+    <ClInclude Include="ranking_save_job.h" />
+    <ClInclude Include="rank_query.h" />
+    <ClInclude Include="rank_query_def.h" />
+    <ClInclude Include="season_manager.h" />
+    <ClInclude Include="server_info_handler.h" />
+    <ClInclude Include="server_monitor.h" />
+    <ClInclude Include="special_activity_job.h" />
+    <ClInclude Include="special_activity_manager_gc.h" />
+    <ClInclude Include="team_manager.h" />
+    <ClInclude Include="timing_trigger_manager.h" />
+    <ClInclude Include="top_up_rank_job.h" />
+    <ClInclude Include="top_up_rank_query.h" />
+    <ClInclude Include="trade_job.h" />
+    <ClInclude Include="trade_manager.h" />
+    <ClInclude Include="tw_executor.h" />
+    <ClInclude Include="tw_http_async.h" />
+    <ClInclude Include="vip_statistics_manager.h" />
+    <ClInclude Include="void_field_manager.h" />
+    <ClInclude Include="void_field_solo_manager.h" />
+    <ClInclude Include="world_boss_job.h" />
+    <ClInclude Include="world_boss_manager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\commonlib\commonlib.vcxproj">
+      <Project>{847599e4-d51e-4339-81c2-cf1f84b0485c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\jsoncpp\jsoncpp.vcxproj">
+      <Project>{b84f7231-16ce-41d8-8c08-7b523ff4225b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\transfer\Transfer.vcxproj">
+      <Project>{afac911b-ab7f-4c1a-97a3-b02c5dd8fc9c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

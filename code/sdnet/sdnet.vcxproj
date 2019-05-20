@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4C83993C-05AB-48BE-8549-1F91A9202219}</ProjectGuid>
+    <RootNamespace>sdnet</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\lib\$(Configuration)\</OutDir>
+    <IntDir>..\tmp\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\lib\$(Configuration)\</OutDir>
+    <IntDir>..\tmp\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../sdu;./win;./;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>SDnetPCH.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ShowIncludes>false</ShowIncludes>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>../sdu;./win;./;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>SDnetPCH.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="bufpool.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="conndataallocator.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="preconfig.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="sdnetconfig.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="SDnetPCH.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="simpleloopbuffer.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="win\conndatamgr.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="win\connectctrl.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="win\connectionmgr.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="win\cplistener.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="win\cpsock.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="win\cpsockmgr.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="win\eventmgr.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="win\iocpctrl.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="win\sdasyncsocket.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="win\sdasyncsocketmgr.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="win\sdconnection.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="win\sdconnector.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="win\sdlistener.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="win\sdnetwin.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SDnetPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bufpool.h" />
+    <ClInclude Include="conndataallocator.h" />
+    <ClInclude Include="sdnet.h" />
+    <ClInclude Include="sdnetconfig.h" />
+    <ClInclude Include="sdnetopt.h" />
+    <ClInclude Include="SDnetPCH.h" />
+    <ClInclude Include="simpleloopbuffer.h" />
+    <ClInclude Include="win\conndatamgr.h" />
+    <ClInclude Include="win\connectctrl.h" />
+    <ClInclude Include="win\connectionmgr.h" />
+    <ClInclude Include="win\cplistener.h" />
+    <ClInclude Include="win\cpsock.h" />
+    <ClInclude Include="win\cpsockmgr.h" />
+    <ClInclude Include="win\eventmgr.h" />
+    <ClInclude Include="win\iocpctrl.h" />
+    <ClInclude Include="win\netevent.h" />
+    <ClInclude Include="win\netrequest.h" />
+    <ClInclude Include="win\resource.h" />
+    <ClInclude Include="win\sdasyncsocket.h" />
+    <ClInclude Include="win\sdasyncsocketmgr.h" />
+    <ClInclude Include="win\sdconnection.h" />
+    <ClInclude Include="win\sdconnector.h" />
+    <ClInclude Include="win\sdlistener.h" />
+    <ClInclude Include="win\sdnetwin.h" />
+    <ClInclude Include="win\thread_buffer_pool.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
